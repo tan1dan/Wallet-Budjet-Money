@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */; };
 		F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */; };
-		F76A0AE82BD1A2EF008E761B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE72BD1A2EF008E761B /* ViewController.swift */; };
+		F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE72BD1A2EF008E761B /* MainViewController.swift */; };
 		F76A0AEB2BD1A2EF008E761B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76A0AE92BD1A2EF008E761B /* Main.storyboard */; };
 		F76A0AED2BD1A2F0008E761B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */; };
 		F76A0AF02BD1A2F0008E761B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76A0AEE2BD1A2F0008E761B /* LaunchScreen.storyboard */; };
 		F76A0AFB2BD1A2F0008E761B /* WalletBudget_MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AFA2BD1A2F0008E761B /* WalletBudget_MoneyTests.swift */; };
 		F76A0B052BD1A2F0008E761B /* WalletBudget_MoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B042BD1A2F0008E761B /* WalletBudget_MoneyUITests.swift */; };
 		F76A0B072BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B062BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift */; };
+		F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */; };
+		F76A0B162BD29D70008E761B /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B152BD29D70008E761B /* CellItem.swift */; };
+		F76A0B182BD2C1C6008E761B /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		F76A0AE02BD1A2EF008E761B /* WalletBudget&Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WalletBudget&Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F76A0AE72BD1A2EF008E761B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F76A0AE72BD1A2EF008E761B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F76A0AEA2BD1A2EF008E761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76A0AEF2BD1A2F0008E761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		F76A0B002BD1A2F0008E761B /* WalletBudget&MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WalletBudget&MoneyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A0B042BD1A2F0008E761B /* WalletBudget_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBudget_MoneyUITests.swift; sourceTree = "<group>"; };
 		F76A0B062BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBudget_MoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76A0B152BD29D70008E761B /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
+		F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,10 @@
 			children = (
 				F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */,
 				F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */,
-				F76A0AE72BD1A2EF008E761B /* ViewController.swift */,
+				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
+				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
+				F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */,
+				F76A0B152BD29D70008E761B /* CellItem.swift */,
 				F76A0AE92BD1A2EF008E761B /* Main.storyboard */,
 				F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */,
 				F76A0AEE2BD1A2F0008E761B /* LaunchScreen.storyboard */,
@@ -258,8 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F76A0AE82BD1A2EF008E761B /* ViewController.swift in Sources */,
+				F76A0B162BD29D70008E761B /* CellItem.swift in Sources */,
+				F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */,
+				F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */,
 				F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */,
+				F76A0B182BD2C1C6008E761B /* DataCollectionViewCell.swift in Sources */,
 				F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
