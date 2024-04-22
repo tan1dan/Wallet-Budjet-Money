@@ -18,8 +18,8 @@ class MainViewController: UIViewController {
     let imageView = UIImageView(image: UIImage(resource: .cvBack2))
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     
-    var accountItems: [CellItem] = [CellItem(account: AccountItem()), CellItem(), CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString))]
-    var dataItems: [CellItem] = [CellItem(data: DataItem()), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
+    var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(isAddCell: true))]
+    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -30,18 +30,21 @@ class MainViewController: UIViewController {
         collectionView.register(AccountsCollectionViewCell.self, forCellWithReuseIdentifier: AccountsCollectionViewCell.id)
         collectionView.register(DataCollectionViewCell.self, forCellWithReuseIdentifier: DataCollectionViewCell.id)
         
-        
         collectionView.delegate = self
         
         let firstCellRegistration = UICollectionView.CellRegistration<AccountsCollectionViewCell, CellItem> {
             cell, indexPath, itemIdentifier in
-            
-            
+            if itemIdentifier == self.accountItems.last {
+                cell.isAddCell = itemIdentifier.account?.isAddCell
+            }
+            cell.labelAccountType.attributedText = cell.stringToNSAttributedString(string: itemIdentifier.account?.name ?? "", size: 20, weight: .regular, color: .gray)
+            cell.labelAmount.attributedText = cell.stringToNSAttributedString(string: String(itemIdentifier.account?.amount ?? 0), size: 24, weight: .bold, color: .black)
+            cell.labelCurrency.attributedText = cell.stringToNSAttributedString(string: itemIdentifier.account?.currency ?? "", size: 22, weight: .light, color: .black)
         }
         
         let secondCellRegistration = UICollectionView.CellRegistration<DataCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
-            
+            cell.data = self.dataItems
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
@@ -88,8 +91,7 @@ class MainViewController: UIViewController {
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(self.view.frame.size.width / 2 - 37.5), heightDimension: .absolute(self.view.frame.size.width / 2 - 37.5))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-//                group.interItemSpacing = .fixed(25)
-//                group.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(20), top: .fixed(0), trailing: .fixed(25), bottom: .fixed(0))
+
                 let layoutSection = NSCollectionLayoutSection(group: group)
                 layoutSection.interGroupSpacing = 20
                 layoutSection.contentInsets = .init(top: 15, leading: 20, bottom: 0, trailing: 15)
@@ -105,7 +107,6 @@ class MainViewController: UIViewController {
 
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
                 
-//                group.edgeSpacing = .init(leading: .fixed(20), top: .fixed(20), trailing: .fixed(20), bottom: .fixed(0))
                 let layoutSection = NSCollectionLayoutSection(group: group)
                 layoutSection.interGroupSpacing = 20
                 layoutSection.contentInsets = .init(top: 20, leading: 20, bottom: 0, trailing: 20)

@@ -19,6 +19,8 @@
 		F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */; };
 		F76A0B162BD29D70008E761B /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B152BD29D70008E761B /* CellItem.swift */; };
 		F76A0B182BD2C1C6008E761B /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */; };
+		F76A0B1A2BD5BFC9008E761B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B192BD5BFC9008E761B /* Resources.swift */; };
+		F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B152BD29D70008E761B /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
 		F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76A0B192BD5BFC9008E761B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRecordsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +114,9 @@
 				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
 				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
 				F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */,
+				F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */,
 				F76A0B152BD29D70008E761B /* CellItem.swift */,
+				F76A0B192BD5BFC9008E761B /* Resources.swift */,
 				F76A0AE92BD1A2EF008E761B /* Main.storyboard */,
 				F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */,
 				F76A0AEE2BD1A2F0008E761B /* LaunchScreen.storyboard */,
@@ -269,6 +275,8 @@
 			files = (
 				F76A0B162BD29D70008E761B /* CellItem.swift in Sources */,
 				F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */,
+				F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */,
+				F76A0B1A2BD5BFC9008E761B /* Resources.swift in Sources */,
 				F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */,
 				F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */,
 				F76A0B182BD2C1C6008E761B /* DataCollectionViewCell.swift in Sources */,
