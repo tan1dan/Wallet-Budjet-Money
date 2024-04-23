@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     
     var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(isAddCell: true))]
-    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
+    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .lastRecords)), CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .cashFlow))]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         let secondCellRegistration = UICollectionView.CellRegistration<DataCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             cell.data = self.dataItems
+            cell.typeOfCell = itemIdentifier.data?.typeOfCell
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
@@ -103,7 +104,7 @@ class MainViewController: UIViewController {
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(self.view.frame.size.width - 40), heightDimension: .fractionalWidth(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(self.view.frame.size.width - 40), heightDimension: .fractionalWidth(1))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(self.view.frame.size.width - 40), heightDimension: .estimated(1))
 
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
                 

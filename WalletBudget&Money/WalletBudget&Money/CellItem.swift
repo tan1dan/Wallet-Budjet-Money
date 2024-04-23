@@ -23,4 +23,5 @@ struct AccountItem: Hashable {
 
 struct DataItem: Hashable {
     var id: String?
+    var typeOfCell: StatisticCell
 }

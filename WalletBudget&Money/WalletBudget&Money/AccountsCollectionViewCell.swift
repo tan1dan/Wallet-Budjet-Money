@@ -71,11 +71,11 @@ class AccountsCollectionViewCell: UICollectionViewCell {
         labelAccountType.translatesAutoresizingMaskIntoConstraints  = false
         labelAmount.translatesAutoresizingMaskIntoConstraints = false
         labelCurrency.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(logoView)
+        contentView.addSubview(logoView)
         logoView.addSubview(imageView)
-        addSubview(labelAccountType)
-        addSubview(labelAmount)
-        addSubview(labelCurrency)
+        contentView.addSubview(labelAccountType)
+        contentView.addSubview(labelAmount)
+        contentView.addSubview(labelCurrency)
         
         
         
@@ -110,8 +110,8 @@ class AccountsCollectionViewCell: UICollectionViewCell {
         logoViewAddCell.translatesAutoresizingMaskIntoConstraints = false
         imageViewAddCell.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(labelAddCell)
-        addSubview(logoViewAddCell)
+        contentView.addSubview(labelAddCell)
+        contentView.addSubview(logoViewAddCell)
         logoViewAddCell.addSubview(imageViewAddCell)
         
         NSLayoutConstraint.activate([

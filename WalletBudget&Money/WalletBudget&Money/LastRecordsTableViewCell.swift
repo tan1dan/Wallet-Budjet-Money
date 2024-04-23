@@ -39,11 +39,11 @@ class LastRecordsTableViewCell: UITableViewCell {
         labelAmountLastRecords.translatesAutoresizingMaskIntoConstraints = false
         labelDateLastRecords.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(imageViewRecords)
-        addSubview(labelCategoryLastRecords)
-        addSubview(labelDescriptionLastRecords)
-        addSubview(labelAmountLastRecords)
-        addSubview(labelDateLastRecords)
+        contentView.addSubview(imageViewRecords)
+        contentView.addSubview(labelCategoryLastRecords)
+        contentView.addSubview(labelDescriptionLastRecords)
+        contentView.addSubview(labelAmountLastRecords)
+        contentView.addSubview(labelDateLastRecords)
         
         NSLayoutConstraint.activate([
             imageViewRecords.topAnchor.constraint(equalTo: topAnchor, constant: 8),
