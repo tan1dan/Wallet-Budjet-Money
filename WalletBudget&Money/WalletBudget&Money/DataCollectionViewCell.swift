@@ -10,6 +10,7 @@ import UIKit
 enum StatisticCell {
     case lastRecords
     case cashFlow
+    case topExpenses
 }
 
 class DataCollectionViewCell: UICollectionViewCell {
@@ -25,6 +26,12 @@ class DataCollectionViewCell: UICollectionViewCell {
     let labelAmountCashFlow = UILabel()
     let buttonShowMoreCashFlow = UIButton()
     var counterLayout = 0
+    
+    //TopExpenses
+    let labelTopExpenses = UILabel()
+    var stackViewTopExpenses = UIStackView()
+    let labelDateTopExpenses = UILabel()
+    let buttonShowMoreTopExpenses = UIButton()
     
     var data: [CellItem] = []
     
@@ -49,7 +56,7 @@ class DataCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         if counterLayout == 0{
-        switch typeOfCell {
+            switch typeOfCell {
             case .lastRecords:
                 layoutLastRecords()
                 tableViewLastRecords.dataSource = self
@@ -60,16 +67,39 @@ class DataCollectionViewCell: UICollectionViewCell {
                 labelLastRecords.attributedText = stringToNSAttributedString(string: "Последние записи", size: 26, weight: .bold, color: .black)
                 
                 buttonShowMoreLastRecordsParameters()
-            counterLayout = 1
+                counterLayout = 1
             case .cashFlow:
                 layoutCashFlow()
-                viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 100, totalAmount: 80, title: "Доход", color: .systemGreen)
+                viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 100, totalAmount: 0, title: "Доход", color: .systemGreen)
                 viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 100, totalAmount: 100, title: "Расход", color: .systemRed)
                 buttonShowMoreCashFlowParameters()
-            stackViewCashFlow.axis = .vertical
-            stackViewCashFlow.distribution = .fillProportionally
-            stackViewCashFlow.spacing = 5
-            counterLayout = 1
+                stackViewCashFlow.axis = .vertical
+                stackViewCashFlow.distribution = .fillProportionally
+                stackViewCashFlow.spacing = 5
+                
+                labelCashFlow.attributedText = stringToNSAttributedString(string: "Денежный поток", size: 26, weight: .bold, color: .black)
+                labelDateCashFlow.attributedText = stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
+                )
+                labelAmountCashFlow.attributedText = stringToNSAttributedString(string: "-20.00 zł", size: 35, weight: .bold, color: .black)
+                
+                counterLayout = 1
+                
+            case .topExpenses:
+                layoutTopExpenses()
+                viewToStackViewCashFLow(stackView: &stackViewTopExpenses, maxAmount: 500, totalAmount: 500, title: "Ремонт", color: .systemOrange)
+                viewToStackViewCashFLow(stackView: &stackViewTopExpenses, maxAmount: 500, totalAmount: 150, title: "Налоги", color: .systemGreen)
+                viewToStackViewCashFLow(stackView: &stackViewTopExpenses, maxAmount: 500, totalAmount: 100, title: "Продукты", color: .systemRed)
+                buttonShowMoreTopExpensesParameters()
+                stackViewTopExpenses.axis = .vertical
+                stackViewTopExpenses.distribution = .fillProportionally
+                stackViewTopExpenses.spacing = 5
+                
+                labelTopExpenses.attributedText = stringToNSAttributedString(string: "Топ расходов", size: 26, weight: .bold, color: .black)
+                labelDateTopExpenses.attributedText = stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
+                )
+                
+                counterLayout = 1
+                
             case nil:
                 return
             }
@@ -96,7 +126,7 @@ class DataCollectionViewCell: UICollectionViewCell {
             tableViewLastRecords.topAnchor.constraint(equalTo: labelLastRecords.bottomAnchor, constant: 10),
             tableViewLastRecords.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             tableViewLastRecords.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-//            tableViewLastRecords.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            //            tableViewLastRecords.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
             buttonShowMoreLastRecords.topAnchor.constraint(equalTo: tableViewLastRecords.bottomAnchor, constant: 5),
             buttonShowMoreLastRecords.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
@@ -108,24 +138,69 @@ class DataCollectionViewCell: UICollectionViewCell {
         labelCashFlow.translatesAutoresizingMaskIntoConstraints = false
         stackViewCashFlow.translatesAutoresizingMaskIntoConstraints = false
         buttonShowMoreCashFlow.translatesAutoresizingMaskIntoConstraints = false
+        labelDateCashFlow.translatesAutoresizingMaskIntoConstraints = false
+        labelAmountCashFlow.translatesAutoresizingMaskIntoConstraints = false
+        
         
         contentView.addSubview(labelCashFlow)
         contentView.addSubview(stackViewCashFlow)
         contentView.addSubview(buttonShowMoreCashFlow)
+        contentView.addSubview(labelDateCashFlow)
+        contentView.addSubview(labelAmountCashFlow)
         
         NSLayoutConstraint.activate([
             labelCashFlow.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             labelCashFlow.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             
+            labelDateCashFlow.topAnchor.constraint(equalTo: labelCashFlow.bottomAnchor, constant: 10),
+            labelDateCashFlow.leadingAnchor.constraint(equalTo: labelCashFlow.leadingAnchor),
             
-            stackViewCashFlow.topAnchor.constraint(equalTo: labelCashFlow.bottomAnchor, constant: 10),
+            labelAmountCashFlow.topAnchor.constraint(equalTo: labelDateCashFlow.bottomAnchor, constant: 5),
+            labelAmountCashFlow.leadingAnchor.constraint(equalTo: labelDateCashFlow.leadingAnchor),
+            
+            stackViewCashFlow.topAnchor.constraint(equalTo: labelAmountCashFlow.bottomAnchor, constant: 10),
             stackViewCashFlow.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackViewCashFlow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             buttonShowMoreCashFlow.topAnchor.constraint(equalTo: stackViewCashFlow.bottomAnchor, constant: 5),
             buttonShowMoreCashFlow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-//            buttonShowMoreCashFlow.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            //            buttonShowMoreCashFlow.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
         ])
+    }
+    
+    private func layoutTopExpenses(){
+        labelTopExpenses.translatesAutoresizingMaskIntoConstraints = false
+        stackViewTopExpenses.translatesAutoresizingMaskIntoConstraints = false
+        buttonShowMoreTopExpenses.translatesAutoresizingMaskIntoConstraints = false
+        labelDateTopExpenses.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        
+        contentView.addSubview(labelTopExpenses)
+        contentView.addSubview(stackViewTopExpenses)
+        contentView.addSubview(buttonShowMoreTopExpenses)
+        contentView.addSubview(labelDateTopExpenses)
+        
+        
+        NSLayoutConstraint.activate([
+            labelTopExpenses.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            labelTopExpenses.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            
+            labelDateTopExpenses.topAnchor.constraint(equalTo: labelTopExpenses.bottomAnchor, constant: 10),
+            labelDateTopExpenses.leadingAnchor.constraint(equalTo: labelTopExpenses.leadingAnchor),
+            
+            stackViewTopExpenses.topAnchor.constraint(equalTo: labelDateTopExpenses.bottomAnchor, constant: 10),
+            stackViewTopExpenses.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            stackViewTopExpenses.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            buttonShowMoreTopExpenses.topAnchor.constraint(equalTo: stackViewTopExpenses.bottomAnchor, constant: 5),
+            buttonShowMoreTopExpenses.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            //            buttonShowMoreCashFlow.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+        ])
+    }
+    
+    private func buttonShowMoreTopExpensesParameters(){
+        buttonShowMoreTopExpenses.setAttributedTitle(stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
     }
     
     private func buttonShowMoreCashFlowParameters(){
@@ -146,15 +221,17 @@ class DataCollectionViewCell: UICollectionViewCell {
         
         let labelAmount: UILabel = {
             let label = UILabel()
-            label.attributedText = stringToNSAttributedString(string: "\(totalAmount)", size: 15, weight: .bold, color: .black)
+            label.attributedText = stringToNSAttributedString(string: "\(totalAmount) zł", size: 15, weight: .bold, color: .black)
             return label
         }()
         
         let viewBackground = UIView()
-        viewBackground.backgroundColor = .systemGray
+        viewBackground.backgroundColor = .systemGray5
+        viewBackground.layer.cornerRadius = 5
         
         let viewLine = UIView()
         viewLine.backgroundColor = color
+        viewLine.layer.cornerRadius = 5
         
         viewMain.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false

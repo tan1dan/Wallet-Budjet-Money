@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     
     var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(isAddCell: true))]
-    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .lastRecords)), CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .cashFlow))]
+    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .lastRecords)), CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .cashFlow)), CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .topExpenses))]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -56,6 +56,7 @@ class MainViewController: UIViewController {
                 let cell = collectionView.dequeueConfiguredReusableCell(using: secondCellRegistration, for: indexPath, item: itemIdentifier)
                 return cell
             }
+            
         }
         
         var firstSnapshot = NSDiffableDataSourceSnapshot<Section, CellItem>()
