@@ -46,29 +46,29 @@ class LastRecordsTableViewCell: UITableViewCell {
         contentView.addSubview(labelDateLastRecords)
         
         NSLayoutConstraint.activate([
-            imageViewRecords.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            imageViewRecords.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            imageViewRecords.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            imageViewRecords.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
            
             imageViewRecords.widthAnchor.constraint(equalTo: imageViewRecords.heightAnchor, multiplier: 1),
             imageViewRecords.widthAnchor.constraint(equalToConstant: 40),
             
-            labelCategoryLastRecords.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            labelCategoryLastRecords.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             labelCategoryLastRecords.leadingAnchor.constraint(equalTo: imageViewRecords.trailingAnchor, constant: 5),
             labelCategoryLastRecords.trailingAnchor.constraint(equalTo: labelAmountLastRecords.leadingAnchor, constant: -5),
             labelCategoryLastRecords.heightAnchor.constraint(equalTo: labelDescriptionLastRecords.heightAnchor, multiplier: 1),
             
             labelDescriptionLastRecords.topAnchor.constraint(equalTo: labelCategoryLastRecords.bottomAnchor, constant: 5),
             labelDescriptionLastRecords.leadingAnchor.constraint(equalTo: imageViewRecords.trailingAnchor, constant: 5),
-            labelDescriptionLastRecords.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            labelDescriptionLastRecords.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             labelDescriptionLastRecords.trailingAnchor.constraint(equalTo: labelDateLastRecords.leadingAnchor, constant: -5),
             
-            labelAmountLastRecords.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            labelAmountLastRecords.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            labelAmountLastRecords.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            labelAmountLastRecords.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             labelAmountLastRecords.heightAnchor.constraint(equalTo: labelDateLastRecords.heightAnchor, multiplier: 1),
             
             labelDateLastRecords.topAnchor.constraint(equalTo: labelAmountLastRecords.bottomAnchor, constant: 5),
-            labelDateLastRecords.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            labelDateLastRecords.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+            labelDateLastRecords.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            labelDateLastRecords.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ])
     }
     

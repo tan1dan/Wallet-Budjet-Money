@@ -24,6 +24,7 @@
 		F76A0B202BDA959C008E761B /* CashFlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */; };
 		F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */; };
 		F76A0B242BDA9662008E761B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B232BDA9662008E761B /* UIView + ext.swift */; };
+		F76A0B262BDAA04C008E761B /* AccountsAddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopExpensesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B232BDA9662008E761B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
+		F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsAddCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
 				F76A0B232BDA9662008E761B /* UIView + ext.swift */,
 				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
+				F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */,
 				F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */,
 				F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */,
 				F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */,
@@ -284,6 +287,7 @@
 			files = (
 				F76A0B202BDA959C008E761B /* CashFlowCollectionViewCell.swift in Sources */,
 				F76A0B162BD29D70008E761B /* CellItem.swift in Sources */,
+				F76A0B262BDAA04C008E761B /* AccountsAddCollectionViewCell.swift in Sources */,
 				F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */,
 				F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */,
 				F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */,

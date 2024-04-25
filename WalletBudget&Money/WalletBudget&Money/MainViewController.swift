@@ -34,14 +34,16 @@ class MainViewController: UIViewController {
         
         collectionView.delegate = self
         
-        let firstCellRegistration = UICollectionView.CellRegistration<AccountsCollectionViewCell, CellItem> {
+        let accountsCellRegistration = UICollectionView.CellRegistration<AccountsCollectionViewCell, CellItem> {
             cell, indexPath, itemIdentifier in
-            if itemIdentifier == self.accountItems.last {
-                cell.isAddCell = itemIdentifier.account?.isAddCell
-            }
             cell.labelAccountType.attributedText = cell.stringToNSAttributedString(string: itemIdentifier.account?.name ?? "", size: 20, weight: .regular, color: .gray)
             cell.labelAmount.attributedText = cell.stringToNSAttributedString(string: String(itemIdentifier.account?.amount ?? 0), size: 24, weight: .bold, color: .black)
             cell.labelCurrency.attributedText = cell.stringToNSAttributedString(string: itemIdentifier.account?.currency ?? "", size: 22, weight: .light, color: .black)
+        }
+        
+        let accountsAddCellRegistration = UICollectionView.CellRegistration<AccountsAddCollectionViewCell, CellItem> {
+            cell, indexPath, itemIdentifier in
+            
         }
         
         let lastRecordsCellRegistration = UICollectionView.CellRegistration<LastRecordsCollectionViewCell, CellItem> {
@@ -62,8 +64,13 @@ class MainViewController: UIViewController {
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
             if indexPath.section == 0 {
-                let cell = collectionView.dequeueConfiguredReusableCell(using: firstCellRegistration, for: indexPath, item: itemIdentifier)
-                return cell
+                if indexPath.row == self.accountItems.count {
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: accountsAddCellRegistration, for: indexPath, item: itemIdentifier)
+                    return cell
+                } else {
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: accountsCellRegistration, for: indexPath, item: itemIdentifier)
+                    return cell
+                }
             } else {
                 if indexPath.row == 0 {
                     let cell = collectionView.dequeueConfiguredReusableCell(using: lastRecordsCellRegistration, for: indexPath, item: itemIdentifier)

@@ -62,19 +62,18 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
         
         
         NSLayoutConstraint.activate([
-            labelTopExpenses.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            labelTopExpenses.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            labelTopExpenses.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            labelTopExpenses.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25),
             
             labelDateTopExpenses.topAnchor.constraint(equalTo: labelTopExpenses.bottomAnchor, constant: 10),
             labelDateTopExpenses.leadingAnchor.constraint(equalTo: labelTopExpenses.leadingAnchor),
             
             stackViewTopExpenses.topAnchor.constraint(equalTo: labelDateTopExpenses.bottomAnchor, constant: 10),
-            stackViewTopExpenses.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackViewTopExpenses.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            stackViewTopExpenses.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stackViewTopExpenses.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
             buttonShowMoreTopExpenses.topAnchor.constraint(equalTo: stackViewTopExpenses.bottomAnchor, constant: 5),
-            buttonShowMoreTopExpenses.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            //            buttonShowMoreCashFlow.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            buttonShowMoreTopExpenses.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
         ])
     }
     

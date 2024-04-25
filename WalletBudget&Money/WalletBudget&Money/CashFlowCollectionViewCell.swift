@@ -33,7 +33,7 @@ class CashFlowCollectionViewCell: UICollectionViewCell {
         viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 100, totalAmount: 100, title: "Расход", color: .systemRed)
         buttonShowMoreCashFlowParameters()
         stackViewCashFlow.axis = .vertical
-        stackViewCashFlow.distribution = .fillProportionally
+        stackViewCashFlow.distribution = .equalSpacing
         stackViewCashFlow.spacing = 5
         
         labelCashFlow.attributedText = stringToNSAttributedString(string: "Денежный поток", size: 26, weight: .bold, color: .black)
@@ -63,8 +63,8 @@ class CashFlowCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(labelAmountCashFlow)
         
         NSLayoutConstraint.activate([
-            labelCashFlow.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            labelCashFlow.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            labelCashFlow.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            labelCashFlow.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25),
             
             labelDateCashFlow.topAnchor.constraint(equalTo: labelCashFlow.bottomAnchor, constant: 10),
             labelDateCashFlow.leadingAnchor.constraint(equalTo: labelCashFlow.leadingAnchor),
@@ -73,12 +73,11 @@ class CashFlowCollectionViewCell: UICollectionViewCell {
             labelAmountCashFlow.leadingAnchor.constraint(equalTo: labelDateCashFlow.leadingAnchor),
             
             stackViewCashFlow.topAnchor.constraint(equalTo: labelAmountCashFlow.bottomAnchor, constant: 10),
-            stackViewCashFlow.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackViewCashFlow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            stackViewCashFlow.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stackViewCashFlow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
             buttonShowMoreCashFlow.topAnchor.constraint(equalTo: stackViewCashFlow.bottomAnchor, constant: 5),
-            buttonShowMoreCashFlow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            //            buttonShowMoreCashFlow.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            buttonShowMoreCashFlow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
         ])
     }
     

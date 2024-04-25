@@ -46,18 +46,19 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(buttonShowMoreLastRecords)
         
         NSLayoutConstraint.activate([
-            labelLastRecords.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            labelLastRecords.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            labelLastRecords.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            labelLastRecords.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25),
             
             
             tableViewLastRecords.topAnchor.constraint(equalTo: labelLastRecords.bottomAnchor, constant: 10),
-            tableViewLastRecords.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            tableViewLastRecords.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            tableViewLastRecords.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            tableViewLastRecords.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            tableViewLastRecords.heightAnchor.constraint(equalToConstant: 70 * 3),
             
             
             buttonShowMoreLastRecords.topAnchor.constraint(equalTo: tableViewLastRecords.bottomAnchor, constant: 5),
-            buttonShowMoreLastRecords.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            buttonShowMoreLastRecords.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            buttonShowMoreLastRecords.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
+            buttonShowMoreLastRecords.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
         ])
     }
     
@@ -72,6 +73,7 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
 }
 
 extension LastRecordsCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data.count
     }
@@ -81,9 +83,9 @@ extension LastRecordsCollectionViewCell: UITableViewDelegate, UITableViewDataSou
         cell.selectionStyle = .none
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }
-    
     
 }
