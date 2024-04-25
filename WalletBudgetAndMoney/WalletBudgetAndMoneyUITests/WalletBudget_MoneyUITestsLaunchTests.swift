@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class WalletBudget_MoneyUITestsLaunchTests: XCTestCase {
+final class WalletBudgetAndMoneyUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

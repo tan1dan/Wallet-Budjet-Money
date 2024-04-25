@@ -6,9 +6,9 @@
 //
 
 import XCTest
-@testable import WalletBudget_Money
+@testable import WalletBudgetAndMoney
 
-final class WalletBudget_MoneyTests: XCTestCase {
+final class WalletBudgetAndMoneyTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

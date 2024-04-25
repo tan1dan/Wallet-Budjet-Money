@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F76A0AE02BD1A2EF008E761B /* WalletBudget&Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WalletBudget&Money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76A0AE02BD1A2EF008E761B /* WalletBudgetAndMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletBudgetAndMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F76A0AE72BD1A2EF008E761B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -53,9 +53,9 @@
 		F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76A0AEF2BD1A2F0008E761B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F76A0AF12BD1A2F0008E761B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F76A0AF62BD1A2F0008E761B /* WalletBudget&MoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WalletBudget&MoneyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76A0AF62BD1A2F0008E761B /* WalletBudgetAndMoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletBudgetAndMoneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A0AFA2BD1A2F0008E761B /* WalletBudget_MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBudget_MoneyTests.swift; sourceTree = "<group>"; };
-		F76A0B002BD1A2F0008E761B /* WalletBudget&MoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WalletBudget&MoneyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76A0B002BD1A2F0008E761B /* WalletBudgetAndMoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletBudgetAndMoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A0B042BD1A2F0008E761B /* WalletBudget_MoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBudget_MoneyUITests.swift; sourceTree = "<group>"; };
 		F76A0B062BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBudget_MoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -97,9 +97,9 @@
 		F76A0AD72BD1A2EF008E761B = {
 			isa = PBXGroup;
 			children = (
-				F76A0AE22BD1A2EF008E761B /* WalletBudget&Money */,
-				F76A0AF92BD1A2F0008E761B /* WalletBudget&MoneyTests */,
-				F76A0B032BD1A2F0008E761B /* WalletBudget&MoneyUITests */,
+				F76A0AE22BD1A2EF008E761B /* WalletBudgetAndMoney */,
+				F76A0AF92BD1A2F0008E761B /* WalletBudgetAndMoneyTests */,
+				F76A0B032BD1A2F0008E761B /* WalletBudgetAndMoneyUITests */,
 				F76A0AE12BD1A2EF008E761B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,14 +107,14 @@
 		F76A0AE12BD1A2EF008E761B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F76A0AE02BD1A2EF008E761B /* WalletBudget&Money.app */,
-				F76A0AF62BD1A2F0008E761B /* WalletBudget&MoneyTests.xctest */,
-				F76A0B002BD1A2F0008E761B /* WalletBudget&MoneyUITests.xctest */,
+				F76A0AE02BD1A2EF008E761B /* WalletBudgetAndMoney.app */,
+				F76A0AF62BD1A2F0008E761B /* WalletBudgetAndMoneyTests.xctest */,
+				F76A0B002BD1A2F0008E761B /* WalletBudgetAndMoneyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F76A0AE22BD1A2EF008E761B /* WalletBudget&Money */ = {
+		F76A0AE22BD1A2EF008E761B /* WalletBudgetAndMoney */ = {
 			isa = PBXGroup;
 			children = (
 				F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */,
@@ -134,32 +134,32 @@
 				F76A0AEE2BD1A2F0008E761B /* LaunchScreen.storyboard */,
 				F76A0AF12BD1A2F0008E761B /* Info.plist */,
 			);
-			path = "WalletBudget&Money";
+			path = WalletBudgetAndMoney;
 			sourceTree = "<group>";
 		};
-		F76A0AF92BD1A2F0008E761B /* WalletBudget&MoneyTests */ = {
+		F76A0AF92BD1A2F0008E761B /* WalletBudgetAndMoneyTests */ = {
 			isa = PBXGroup;
 			children = (
 				F76A0AFA2BD1A2F0008E761B /* WalletBudget_MoneyTests.swift */,
 			);
-			path = "WalletBudget&MoneyTests";
+			path = WalletBudgetAndMoneyTests;
 			sourceTree = "<group>";
 		};
-		F76A0B032BD1A2F0008E761B /* WalletBudget&MoneyUITests */ = {
+		F76A0B032BD1A2F0008E761B /* WalletBudgetAndMoneyUITests */ = {
 			isa = PBXGroup;
 			children = (
 				F76A0B042BD1A2F0008E761B /* WalletBudget_MoneyUITests.swift */,
 				F76A0B062BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift */,
 			);
-			path = "WalletBudget&MoneyUITests";
+			path = WalletBudgetAndMoneyUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F76A0ADF2BD1A2EF008E761B /* WalletBudget&Money */ = {
+		F76A0ADF2BD1A2EF008E761B /* WalletBudgetAndMoney */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F76A0B0A2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudget&Money" */;
+			buildConfigurationList = F76A0B0A2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudgetAndMoney" */;
 			buildPhases = (
 				F76A0ADC2BD1A2EF008E761B /* Sources */,
 				F76A0ADD2BD1A2EF008E761B /* Frameworks */,
@@ -169,14 +169,14 @@
 			);
 			dependencies = (
 			);
-			name = "WalletBudget&Money";
+			name = WalletBudgetAndMoney;
 			productName = "WalletBudget&Money";
-			productReference = F76A0AE02BD1A2EF008E761B /* WalletBudget&Money.app */;
+			productReference = F76A0AE02BD1A2EF008E761B /* WalletBudgetAndMoney.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F76A0AF52BD1A2F0008E761B /* WalletBudget&MoneyTests */ = {
+		F76A0AF52BD1A2F0008E761B /* WalletBudgetAndMoneyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F76A0B0D2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudget&MoneyTests" */;
+			buildConfigurationList = F76A0B0D2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudgetAndMoneyTests" */;
 			buildPhases = (
 				F76A0AF22BD1A2F0008E761B /* Sources */,
 				F76A0AF32BD1A2F0008E761B /* Frameworks */,
@@ -187,14 +187,14 @@
 			dependencies = (
 				F76A0AF82BD1A2F0008E761B /* PBXTargetDependency */,
 			);
-			name = "WalletBudget&MoneyTests";
+			name = WalletBudgetAndMoneyTests;
 			productName = "WalletBudget&MoneyTests";
-			productReference = F76A0AF62BD1A2F0008E761B /* WalletBudget&MoneyTests.xctest */;
+			productReference = F76A0AF62BD1A2F0008E761B /* WalletBudgetAndMoneyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F76A0AFF2BD1A2F0008E761B /* WalletBudget&MoneyUITests */ = {
+		F76A0AFF2BD1A2F0008E761B /* WalletBudgetAndMoneyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F76A0B102BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudget&MoneyUITests" */;
+			buildConfigurationList = F76A0B102BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudgetAndMoneyUITests" */;
 			buildPhases = (
 				F76A0AFC2BD1A2F0008E761B /* Sources */,
 				F76A0AFD2BD1A2F0008E761B /* Frameworks */,
@@ -205,9 +205,9 @@
 			dependencies = (
 				F76A0B022BD1A2F0008E761B /* PBXTargetDependency */,
 			);
-			name = "WalletBudget&MoneyUITests";
+			name = WalletBudgetAndMoneyUITests;
 			productName = "WalletBudget&MoneyUITests";
-			productReference = F76A0B002BD1A2F0008E761B /* WalletBudget&MoneyUITests.xctest */;
+			productReference = F76A0B002BD1A2F0008E761B /* WalletBudgetAndMoneyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F76A0ADB2BD1A2EF008E761B /* Build configuration list for PBXProject "WalletBudget&Money" */;
+			buildConfigurationList = F76A0ADB2BD1A2EF008E761B /* Build configuration list for PBXProject "WalletBudgetAndMoney" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -246,9 +246,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F76A0ADF2BD1A2EF008E761B /* WalletBudget&Money */,
-				F76A0AF52BD1A2F0008E761B /* WalletBudget&MoneyTests */,
-				F76A0AFF2BD1A2F0008E761B /* WalletBudget&MoneyUITests */,
+				F76A0ADF2BD1A2EF008E761B /* WalletBudgetAndMoney */,
+				F76A0AF52BD1A2F0008E761B /* WalletBudgetAndMoneyTests */,
+				F76A0AFF2BD1A2F0008E761B /* WalletBudgetAndMoneyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,12 +322,12 @@
 /* Begin PBXTargetDependency section */
 		F76A0AF82BD1A2F0008E761B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F76A0ADF2BD1A2EF008E761B /* WalletBudget&Money */;
+			target = F76A0ADF2BD1A2EF008E761B /* WalletBudgetAndMoney */;
 			targetProxy = F76A0AF72BD1A2F0008E761B /* PBXContainerItemProxy */;
 		};
 		F76A0B022BD1A2F0008E761B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F76A0ADF2BD1A2EF008E761B /* WalletBudget&Money */;
+			target = F76A0ADF2BD1A2EF008E761B /* WalletBudgetAndMoney */;
 			targetProxy = F76A0B012BD1A2F0008E761B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -480,7 +480,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LCRJL3NRC8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WalletBudget&Money/Info.plist";
+				INFOPLIST_FILE = WalletBudgetAndMoney/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WalletApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -491,7 +492,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IvanZnak.WalletBudget-Money";
+				PRODUCT_BUNDLE_IDENTIFIER = IvanZnak.WalletBudgetAndMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -508,7 +509,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LCRJL3NRC8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WalletBudget&Money/Info.plist";
+				INFOPLIST_FILE = WalletBudgetAndMoney/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WalletApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -519,7 +521,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IvanZnak.WalletBudget-Money";
+				PRODUCT_BUNDLE_IDENTIFIER = IvanZnak.WalletBudgetAndMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -543,7 +545,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalletBudget&Money.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WalletBudget&Money";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalletBudgetAndMoney.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WalletBudgetAndMoney";
 			};
 			name = Debug;
 		};
@@ -563,7 +565,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalletBudget&Money.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WalletBudget&Money";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalletBudgetAndMoney.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WalletBudgetAndMoney";
 			};
 			name = Release;
 		};
@@ -606,7 +608,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F76A0ADB2BD1A2EF008E761B /* Build configuration list for PBXProject "WalletBudget&Money" */ = {
+		F76A0ADB2BD1A2EF008E761B /* Build configuration list for PBXProject "WalletBudgetAndMoney" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F76A0B082BD1A2F0008E761B /* Debug */,
@@ -615,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F76A0B0A2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudget&Money" */ = {
+		F76A0B0A2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudgetAndMoney" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F76A0B0B2BD1A2F0008E761B /* Debug */,
@@ -624,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F76A0B0D2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudget&MoneyTests" */ = {
+		F76A0B0D2BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudgetAndMoneyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F76A0B0E2BD1A2F0008E761B /* Debug */,
@@ -633,7 +635,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F76A0B102BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudget&MoneyUITests" */ = {
+		F76A0B102BD1A2F0008E761B /* Build configuration list for PBXNativeTarget "WalletBudgetAndMoneyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F76A0B112BD1A2F0008E761B /* Debug */,
