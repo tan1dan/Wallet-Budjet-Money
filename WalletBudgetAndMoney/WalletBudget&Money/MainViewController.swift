@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     let imageView = UIImageView(image: UIImage(resource: .cvBack2))
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     
-    var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(isAddCell: true))]
+    var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, name: "Santander", amount: 4560.01, currency: "PLN")) ,CellItem(account: AccountItem())]
     var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,8 @@ class MainViewController: UIViewController {
         
         
         collectionView.register(AccountsCollectionViewCell.self, forCellWithReuseIdentifier: AccountsCollectionViewCell.id)
+        collectionView.register(AccountsAddCollectionViewCell.self, forCellWithReuseIdentifier: AccountsAddCollectionViewCell.id)
+        
         collectionView.register(LastRecordsCollectionViewCell.self, forCellWithReuseIdentifier: LastRecordsCollectionViewCell.id)
         collectionView.register(CashFlowCollectionViewCell.self, forCellWithReuseIdentifier: CashFlowCollectionViewCell.id)
         collectionView.register(TopExpensesCollectionViewCell.self, forCellWithReuseIdentifier: TopExpensesCollectionViewCell.id)
@@ -64,7 +66,7 @@ class MainViewController: UIViewController {
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
             if indexPath.section == 0 {
-                if indexPath.row == self.accountItems.count {
+                if indexPath.row == self.accountItems.count - 1 {
                     let cell = collectionView.dequeueConfiguredReusableCell(using: accountsAddCellRegistration, for: indexPath, item: itemIdentifier)
                     return cell
                 } else {
@@ -139,7 +141,7 @@ class MainViewController: UIViewController {
                 
                 let layoutSection = NSCollectionLayoutSection(group: group)
                 layoutSection.interGroupSpacing = 20
-                layoutSection.contentInsets = .init(top: 20, leading: 20, bottom: 0, trailing: 20)
+                layoutSection.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
                 return layoutSection
                 
             }

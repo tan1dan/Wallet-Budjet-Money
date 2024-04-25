@@ -14,8 +14,11 @@ class AccountsAddCollectionViewCell: UICollectionViewCell {
     let imageViewAddCell = UIImageView(image: UIImage(systemName: "plus"))
     let logoViewAddCellHeight: CGFloat = 40
     
+    static let id = "AccountsAddCollectionViewCell"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
         layerParameters()
         layoutAddCell()
         logoViewAddCellParameters()

@@ -14,7 +14,6 @@ struct CellItem: Hashable {
 
 struct AccountItem: Hashable {
     var id: String?
-    var isAddCell: Bool?
     var image: UIImage?
     var name: String?
     var amount: Double?

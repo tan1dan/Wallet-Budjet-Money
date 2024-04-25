@@ -20,12 +20,12 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
-        layer.cornerRadius = frame.size.width / 7
-        layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 0, height: 4)
-        layer.shadowRadius = 4
+        contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = frame.size.width / 7
+        contentView.layer.shadowColor = UIColor.gray.cgColor
+        contentView.layer.shadowOpacity = 0.5
+        contentView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        contentView.layer.shadowRadius = 4
         
         layoutTopExpenses()
         viewToStackViewCashFLow(stackView: &stackViewTopExpenses, maxAmount: 500, totalAmount: 500, title: "Ремонт", color: .systemOrange)
@@ -74,6 +74,7 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
             
             buttonShowMoreTopExpenses.topAnchor.constraint(equalTo: stackViewTopExpenses.bottomAnchor, constant: 5),
             buttonShowMoreTopExpenses.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
+            buttonShowMoreTopExpenses.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
     
