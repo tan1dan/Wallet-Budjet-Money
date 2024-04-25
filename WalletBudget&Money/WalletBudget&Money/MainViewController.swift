@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     
     var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, isAddCell: false, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(isAddCell: true))]
-    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .lastRecords)), CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .cashFlow)), CellItem(data: DataItem(id: UUID().uuidString, typeOfCell: .topExpenses))]
+    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -28,7 +28,9 @@ class MainViewController: UIViewController {
         
         
         collectionView.register(AccountsCollectionViewCell.self, forCellWithReuseIdentifier: AccountsCollectionViewCell.id)
-        collectionView.register(DataCollectionViewCell.self, forCellWithReuseIdentifier: DataCollectionViewCell.id)
+        collectionView.register(LastRecordsCollectionViewCell.self, forCellWithReuseIdentifier: LastRecordsCollectionViewCell.id)
+        collectionView.register(CashFlowCollectionViewCell.self, forCellWithReuseIdentifier: CashFlowCollectionViewCell.id)
+        collectionView.register(TopExpensesCollectionViewCell.self, forCellWithReuseIdentifier: TopExpensesCollectionViewCell.id)
         
         collectionView.delegate = self
         
@@ -42,19 +44,38 @@ class MainViewController: UIViewController {
             cell.labelCurrency.attributedText = cell.stringToNSAttributedString(string: itemIdentifier.account?.currency ?? "", size: 22, weight: .light, color: .black)
         }
         
-        let secondCellRegistration = UICollectionView.CellRegistration<DataCollectionViewCell, CellItem> {
+        let lastRecordsCellRegistration = UICollectionView.CellRegistration<LastRecordsCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             cell.data = self.dataItems
-            cell.typeOfCell = itemIdentifier.data?.typeOfCell
         }
+        
+        let cashFlowCellRegistration = UICollectionView.CellRegistration<CashFlowCollectionViewCell, CellItem> {
+            cell, IndexPath, itemIdentifier in
+            cell.data = self.dataItems
+        }
+        
+        let TopExpensesCellRegistration = UICollectionView.CellRegistration<TopExpensesCollectionViewCell, CellItem> {
+            cell, IndexPath, itemIdentifier in
+            cell.data = self.dataItems
+        }
+        
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
             if indexPath.section == 0 {
                 let cell = collectionView.dequeueConfiguredReusableCell(using: firstCellRegistration, for: indexPath, item: itemIdentifier)
                 return cell
             } else {
-                let cell = collectionView.dequeueConfiguredReusableCell(using: secondCellRegistration, for: indexPath, item: itemIdentifier)
-                return cell
+                if indexPath.row == 0 {
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: lastRecordsCellRegistration, for: indexPath, item: itemIdentifier)
+                    return cell
+                } else if indexPath.row == 1 {
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: cashFlowCellRegistration, for: indexPath, item: itemIdentifier)
+                    return cell
+                } else {
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: TopExpensesCellRegistration, for: indexPath, item: itemIdentifier)
+                    return cell
+                }
+
             }
             
         }
@@ -103,7 +124,7 @@ class MainViewController: UIViewController {
                 
             } else {
                 
-                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(self.view.frame.size.width - 40), heightDimension: .fractionalWidth(1))
+                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(self.view.frame.size.width - 40), heightDimension: .estimated(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(self.view.frame.size.width - 40), heightDimension: .estimated(1))
 

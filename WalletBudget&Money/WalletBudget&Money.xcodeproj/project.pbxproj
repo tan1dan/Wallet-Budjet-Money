@@ -18,9 +18,12 @@
 		F76A0B072BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B062BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift */; };
 		F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */; };
 		F76A0B162BD29D70008E761B /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B152BD29D70008E761B /* CellItem.swift */; };
-		F76A0B182BD2C1C6008E761B /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */; };
 		F76A0B1A2BD5BFC9008E761B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B192BD5BFC9008E761B /* Resources.swift */; };
 		F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */; };
+		F76A0B1E2BDA9579008E761B /* LastRecordsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */; };
+		F76A0B202BDA959C008E761B /* CashFlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */; };
+		F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */; };
+		F76A0B242BDA9662008E761B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B232BDA9662008E761B /* UIView + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +59,12 @@
 		F76A0B062BD1A2F0008E761B /* WalletBudget_MoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBudget_MoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B152BD29D70008E761B /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
-		F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B192BD5BFC9008E761B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRecordsTableViewCell.swift; sourceTree = "<group>"; };
+		F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRecordsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopExpensesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76A0B232BDA9662008E761B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +118,11 @@
 				F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */,
 				F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */,
 				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
+				F76A0B232BDA9662008E761B /* UIView + ext.swift */,
 				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
-				F76A0B172BD2C1C6008E761B /* DataCollectionViewCell.swift */,
+				F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */,
+				F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */,
+				F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */,
 				F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */,
 				F76A0B152BD29D70008E761B /* CellItem.swift */,
 				F76A0B192BD5BFC9008E761B /* Resources.swift */,
@@ -273,13 +282,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76A0B202BDA959C008E761B /* CashFlowCollectionViewCell.swift in Sources */,
 				F76A0B162BD29D70008E761B /* CellItem.swift in Sources */,
 				F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */,
+				F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */,
 				F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */,
 				F76A0B1A2BD5BFC9008E761B /* Resources.swift in Sources */,
 				F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */,
+				F76A0B1E2BDA9579008E761B /* LastRecordsCollectionViewCell.swift in Sources */,
 				F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */,
-				F76A0B182BD2C1C6008E761B /* DataCollectionViewCell.swift in Sources */,
+				F76A0B242BDA9662008E761B /* UIView + ext.swift in Sources */,
 				F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
