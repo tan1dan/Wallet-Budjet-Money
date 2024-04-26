@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
         }
         
         let accountsAddCellRegistration = UICollectionView.CellRegistration<AccountsAddCollectionViewCell, CellItem> {
-            cell, indexPath, itemIdentifier in
+            cell, IndexPath, itemIdentifier in
             
         }
         
