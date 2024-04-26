@@ -29,17 +29,17 @@ class CashFlowCollectionViewCell: UICollectionViewCell {
         contentView.layer.shadowRadius = 4
         
         layoutCashFlow()
-        viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 100, totalAmount: 0, title: "Доход", color: .systemGreen)
-        viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 100, totalAmount: 100, title: "Расход", color: .systemRed)
+        viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 1000, totalAmount: 1000, title: "Доход", color: .systemGreen)
+        viewToStackViewCashFLow(stackView: &stackViewCashFlow, maxAmount: 1000, totalAmount: 300, title: "Расход", color: .systemRed)
         buttonShowMoreCashFlowParameters()
         stackViewCashFlow.axis = .vertical
         stackViewCashFlow.distribution = .equalSpacing
         stackViewCashFlow.spacing = 5
         
-        labelCashFlow.attributedText = stringToNSAttributedString(string: "Денежный поток", size: 26, weight: .bold, color: .black)
-        labelDateCashFlow.attributedText = stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
+        labelCashFlow.attributedText = UIView.stringToNSAttributedString(string: "Денежный поток", size: 26, weight: .bold, color: .black)
+        labelDateCashFlow.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
         )
-        labelAmountCashFlow.attributedText = stringToNSAttributedString(string: "-20.00 zł", size: 35, weight: .bold, color: .black)
+        labelAmountCashFlow.attributedText = UIView.stringToNSAttributedString(string: "700 zł", size: 35, weight: .bold, color: .black)
         
         
     }
@@ -83,20 +83,20 @@ class CashFlowCollectionViewCell: UICollectionViewCell {
     }
     
     private func buttonShowMoreCashFlowParameters(){
-        buttonShowMoreCashFlow.setAttributedTitle(stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
+        buttonShowMoreCashFlow.setAttributedTitle(UIView.stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
     }
     
     private func viewToStackViewCashFLow(stackView: inout UIStackView, maxAmount: Double, totalAmount: Double, title: String, color: UIColor){
         let viewMain = UIView()
         let labelTitle: UILabel = {
             let label = UILabel()
-            label.attributedText = stringToNSAttributedString(string: title, size: 15, weight: .bold, color: .black)
+            label.attributedText = UIView.stringToNSAttributedString(string: title, size: 15, weight: .bold, color: .black)
             return label
         }()
         
         let labelAmount: UILabel = {
             let label = UILabel()
-            label.attributedText = stringToNSAttributedString(string: "\(totalAmount) zł", size: 15, weight: .bold, color: .black)
+            label.attributedText = UIView.stringToNSAttributedString(string: "\(totalAmount) zł", size: 15, weight: .bold, color: .black)
             return label
         }()
         

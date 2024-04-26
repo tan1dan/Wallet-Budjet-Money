@@ -32,7 +32,7 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
         tableViewLastRecords.showsVerticalScrollIndicator = false
         tableViewLastRecords.register(LastRecordsTableViewCell.self, forCellReuseIdentifier: LastRecordsTableViewCell.id)
         
-        labelLastRecords.attributedText = self.stringToNSAttributedString(string: "Последние записи", size: 26, weight: .bold, color: .black)
+        labelLastRecords.attributedText = UIView.stringToNSAttributedString(string: "Последние записи", size: 26, weight: .bold, color: .black)
         buttonShowMoreLastRecordsParameters()
         
     }
@@ -63,7 +63,7 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
     }
     
     private func buttonShowMoreLastRecordsParameters(){
-        buttonShowMoreLastRecords.setAttributedTitle(stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
+        buttonShowMoreLastRecords.setAttributedTitle(UIView.stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
     }
     
     required init?(coder: NSCoder) {

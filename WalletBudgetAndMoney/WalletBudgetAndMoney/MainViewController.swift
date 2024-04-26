@@ -19,17 +19,18 @@ class MainViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     
     var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, name: "Santander", amount: 4560.01, currency: "PLN")) ,CellItem(account: AccountItem())]
-    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
+    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         collectionViewParameters()
-        layout()
+        layoutVC()
         
         
         collectionView.register(AccountsCollectionViewCell.self, forCellWithReuseIdentifier: AccountsCollectionViewCell.id)
         collectionView.register(AccountsAddCollectionViewCell.self, forCellWithReuseIdentifier: AccountsAddCollectionViewCell.id)
         
+        collectionView.register(BalanceTrendCollectionViewCell.self, forCellWithReuseIdentifier: BalanceTrendCollectionViewCell.id)
         collectionView.register(LastRecordsCollectionViewCell.self, forCellWithReuseIdentifier: LastRecordsCollectionViewCell.id)
         collectionView.register(CashFlowCollectionViewCell.self, forCellWithReuseIdentifier: CashFlowCollectionViewCell.id)
         collectionView.register(TopExpensesCollectionViewCell.self, forCellWithReuseIdentifier: TopExpensesCollectionViewCell.id)
@@ -38,14 +39,19 @@ class MainViewController: UIViewController {
         
         let accountsCellRegistration = UICollectionView.CellRegistration<AccountsCollectionViewCell, CellItem> {
             cell, indexPath, itemIdentifier in
-            cell.labelAccountType.attributedText = cell.stringToNSAttributedString(string: itemIdentifier.account?.name ?? "", size: 20, weight: .regular, color: .gray)
-            cell.labelAmount.attributedText = cell.stringToNSAttributedString(string: String(itemIdentifier.account?.amount ?? 0), size: 24, weight: .bold, color: .black)
-            cell.labelCurrency.attributedText = cell.stringToNSAttributedString(string: itemIdentifier.account?.currency ?? "", size: 22, weight: .light, color: .black)
+            cell.labelAccountType.attributedText = UIView.stringToNSAttributedString(string: itemIdentifier.account?.name ?? "", size: 20, weight: .regular, color: .gray)
+            cell.labelAmount.attributedText = UIView.stringToNSAttributedString(string: String(itemIdentifier.account?.amount ?? 0), size: 24, weight: .bold, color: .black)
+            cell.labelCurrency.attributedText = UIView.stringToNSAttributedString(string: itemIdentifier.account?.currency ?? "", size: 22, weight: .light, color: .black)
         }
         
         let accountsAddCellRegistration = UICollectionView.CellRegistration<AccountsAddCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             
+        }
+        
+        let balanceTrendCellRegistration = UICollectionView.CellRegistration<BalanceTrendCollectionViewCell, CellItem> {
+            cell, IndexPath, itemIdentifier in
+            cell.data = self.dataItems
         }
         
         let lastRecordsCellRegistration = UICollectionView.CellRegistration<LastRecordsCollectionViewCell, CellItem> {
@@ -75,9 +81,12 @@ class MainViewController: UIViewController {
                 }
             } else {
                 if indexPath.row == 0 {
-                    let cell = collectionView.dequeueConfiguredReusableCell(using: lastRecordsCellRegistration, for: indexPath, item: itemIdentifier)
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: balanceTrendCellRegistration, for: indexPath, item: itemIdentifier)
                     return cell
                 } else if indexPath.row == 1 {
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: lastRecordsCellRegistration, for: indexPath, item: itemIdentifier)
+                    return cell
+                } else if indexPath.row == 2 {
                     let cell = collectionView.dequeueConfiguredReusableCell(using: cashFlowCellRegistration, for: indexPath, item: itemIdentifier)
                     return cell
                 } else {
@@ -97,7 +106,7 @@ class MainViewController: UIViewController {
         
     }
     
-    func layout(){
+    func layoutVC(){
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)

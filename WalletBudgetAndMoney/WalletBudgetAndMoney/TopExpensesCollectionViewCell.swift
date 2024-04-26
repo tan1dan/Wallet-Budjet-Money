@@ -36,8 +36,8 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
         stackViewTopExpenses.distribution = .fillProportionally
         stackViewTopExpenses.spacing = 5
         
-        labelTopExpenses.attributedText = stringToNSAttributedString(string: "Топ расходов", size: 26, weight: .bold, color: .black)
-        labelDateTopExpenses.attributedText = stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
+        labelTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Топ расходов", size: 26, weight: .bold, color: .black)
+        labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
         )
         
         
@@ -79,20 +79,20 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
     }
     
     private func buttonShowMoreTopExpensesParameters(){
-        buttonShowMoreTopExpenses.setAttributedTitle(stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
+        buttonShowMoreTopExpenses.setAttributedTitle(UIView.stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
     }
     
     private func viewToStackViewCashFLow(stackView: inout UIStackView, maxAmount: Double, totalAmount: Double, title: String, color: UIColor){
         let viewMain = UIView()
         let labelTitle: UILabel = {
             let label = UILabel()
-            label.attributedText = stringToNSAttributedString(string: title, size: 15, weight: .bold, color: .black)
+            label.attributedText = UIView.stringToNSAttributedString(string: title, size: 15, weight: .bold, color: .black)
             return label
         }()
         
         let labelAmount: UILabel = {
             let label = UILabel()
-            label.attributedText = stringToNSAttributedString(string: "\(totalAmount) zł", size: 15, weight: .bold, color: .black)
+            label.attributedText = UIView.stringToNSAttributedString(string: "\(totalAmount) zł", size: 15, weight: .bold, color: .black)
             return label
         }()
         

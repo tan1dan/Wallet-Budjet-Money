@@ -26,9 +26,9 @@ class LastRecordsTableViewCell: UITableViewCell {
         imageViewRecords.layer.masksToBounds = true
         labelCategoryLastRecords.text = "Перевести, снять"
         labelCategoryLastRecords.numberOfLines = 0
-        labelDescriptionLastRecords.attributedText = stringToNSAttributedString(string: "Наличные -> Santander", size: 14, weight: .bold, color: .gray)
-        labelAmountLastRecords.attributedText = stringToNSAttributedString(string: "1112.00", size: 17, weight: .bold, color: .systemGreen)
-        labelDateLastRecords.attributedText = stringToNSAttributedString(string: "18.04.2024", size: 14, weight: .semibold, color: .gray)
+        labelDescriptionLastRecords.attributedText = UIView.stringToNSAttributedString(string: "Наличные -> Santander", size: 14, weight: .bold, color: .gray)
+        labelAmountLastRecords.attributedText = UIView.stringToNSAttributedString(string: "1112.00", size: 17, weight: .bold, color: .systemGreen)
+        labelDateLastRecords.attributedText = UIView.stringToNSAttributedString(string: "18.04.2024", size: 14, weight: .semibold, color: .gray)
         //
     }
     
