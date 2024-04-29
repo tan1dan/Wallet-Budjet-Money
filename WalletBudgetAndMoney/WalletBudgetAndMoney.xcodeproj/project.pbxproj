@@ -26,7 +26,7 @@
 		F76A0B1E2BDA9579008E761B /* LastRecordsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */; };
 		F76A0B202BDA959C008E761B /* CashFlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */; };
 		F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */; };
-		F76A0B242BDA9662008E761B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B232BDA9662008E761B /* UIView + ext.swift */; };
+		F76A0B242BDA9662008E761B /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B232BDA9662008E761B /* UIView+ext.swift */; };
 		F76A0B262BDAA04C008E761B /* AccountsAddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */; };
 		F76A0B2E2BDBD748008E761B /* ReportDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B292BDBD748008E761B /* ReportDetail.swift */; };
 		F76A0B2F2BDBD748008E761B /* UIColor+ComplexeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B2A2BDBD748008E761B /* UIColor+ComplexeGraph.swift */; };
@@ -39,6 +39,9 @@
 		F76A0B3B2BDC4DA1008E761B /* LastRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B3A2BDC4DA1008E761B /* LastRecordsViewController.swift */; };
 		F76A0B3D2BDC4DB5008E761B /* TopExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B3C2BDC4DB5008E761B /* TopExpensesViewController.swift */; };
 		F76A0B3F2BDC6D60008E761B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B3E2BDC6D60008E761B /* HeaderView.swift */; };
+		F76A0B452BDD4502008E761B /* ChangeBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B442BDD4502008E761B /* ChangeBalanceViewController.swift */; };
+		F76A0B472BDD7224008E761B /* ChangeBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */; };
+		F76A0B492BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +91,7 @@
 		F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRecordsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopExpensesCollectionViewCell.swift; sourceTree = "<group>"; };
-		F76A0B232BDA9662008E761B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
+		F76A0B232BDA9662008E761B /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsAddCollectionViewCell.swift; sourceTree = "<group>"; };
 		F76A0B292BDBD748008E761B /* ReportDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetail.swift; sourceTree = "<group>"; };
 		F76A0B2A2BDBD748008E761B /* UIColor+ComplexeGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ComplexeGraph.swift"; sourceTree = "<group>"; };
@@ -101,6 +104,9 @@
 		F76A0B3A2BDC4DA1008E761B /* LastRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRecordsViewController.swift; sourceTree = "<group>"; };
 		F76A0B3C2BDC4DB5008E761B /* TopExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopExpensesViewController.swift; sourceTree = "<group>"; };
 		F76A0B3E2BDC6D60008E761B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F76A0B442BDD4502008E761B /* ChangeBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBalanceViewController.swift; sourceTree = "<group>"; };
+		F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBalanceTableViewCell.swift; sourceTree = "<group>"; };
+		F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBalanceDateTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,22 +188,10 @@
 				F76A0B332BDBD753008E761B /* ComplexSample */,
 				F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */,
 				F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */,
-				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
-				F76A0B362BDC3BE3008E761B /* BalanceViewController.swift */,
-				F76A0B382BDC4D85008E761B /* CashFlowViewController.swift */,
-				F76A0B3A2BDC4DA1008E761B /* LastRecordsViewController.swift */,
-				F76A0B3E2BDC6D60008E761B /* HeaderView.swift */,
-				F76A0B3C2BDC4DB5008E761B /* TopExpensesViewController.swift */,
-				F76A0B232BDA9662008E761B /* UIView + ext.swift */,
-				F76A0B342BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift */,
-				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
-				F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */,
-				F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */,
-				F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */,
-				F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */,
-				F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */,
-				F76A0B152BD29D70008E761B /* CellItem.swift */,
-				F76A0B192BD5BFC9008E761B /* Resources.swift */,
+				F76A0B402BDD442A008E761B /* Model */,
+				F76A0B412BDD443D008E761B /* View */,
+				F76A0B422BDD444C008E761B /* Presenter */,
+				F76A0B432BDD4474008E761B /* Resources+Help */,
 				F76A0AE92BD1A2EF008E761B /* Main.storyboard */,
 				F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */,
 				F76A0AEE2BD1A2F0008E761B /* LaunchScreen.storyboard */,
@@ -233,6 +227,53 @@
 				F76A0B2A2BDBD748008E761B /* UIColor+ComplexeGraph.swift */,
 			);
 			path = ComplexSample;
+			sourceTree = "<group>";
+		};
+		F76A0B402BDD442A008E761B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F76A0B412BDD443D008E761B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
+				F76A0B362BDC3BE3008E761B /* BalanceViewController.swift */,
+				F76A0B382BDC4D85008E761B /* CashFlowViewController.swift */,
+				F76A0B3A2BDC4DA1008E761B /* LastRecordsViewController.swift */,
+				F76A0B442BDD4502008E761B /* ChangeBalanceViewController.swift */,
+				F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */,
+				F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */,
+				F76A0B3C2BDC4DB5008E761B /* TopExpensesViewController.swift */,
+				F76A0B3E2BDC6D60008E761B /* HeaderView.swift */,
+				F76A0B342BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift */,
+				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
+				F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */,
+				F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */,
+				F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */,
+				F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */,
+				F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F76A0B422BDD444C008E761B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F76A0B432BDD4474008E761B /* Resources+Help */ = {
+			isa = PBXGroup;
+			children = (
+				F76A0B232BDA9662008E761B /* UIView+ext.swift */,
+				F76A0B152BD29D70008E761B /* CellItem.swift */,
+				F76A0B192BD5BFC9008E761B /* Resources.swift */,
+			);
+			path = "Resources+Help";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,16 +525,19 @@
 				F76A0B312BDBD748008E761B /* GraphDataModel.swift in Sources */,
 				F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */,
 				F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */,
+				F76A0B492BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift in Sources */,
 				F76A0B372BDC3BE3008E761B /* BalanceViewController.swift in Sources */,
 				F76A0B1A2BD5BFC9008E761B /* Resources.swift in Sources */,
 				F76A0B3B2BDC4DA1008E761B /* LastRecordsViewController.swift in Sources */,
+				F76A0B452BDD4502008E761B /* ChangeBalanceViewController.swift in Sources */,
 				F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */,
 				F76A0B1E2BDA9579008E761B /* LastRecordsCollectionViewCell.swift in Sources */,
 				F76A0B3D2BDC4DB5008E761B /* TopExpensesViewController.swift in Sources */,
 				F76A0B322BDBD748008E761B /* Date+Formater.swift in Sources */,
 				F76A0B2E2BDBD748008E761B /* ReportDetail.swift in Sources */,
 				F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */,
-				F76A0B242BDA9662008E761B /* UIView + ext.swift in Sources */,
+				F76A0B242BDA9662008E761B /* UIView+ext.swift in Sources */,
+				F76A0B472BDD7224008E761B /* ChangeBalanceTableViewCell.swift in Sources */,
 				F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */,
 				F76A0B3F2BDC6D60008E761B /* HeaderView.swift in Sources */,
 				F76A0B302BDBD748008E761B /* ComplexeGraphViewController.swift in Sources */,
