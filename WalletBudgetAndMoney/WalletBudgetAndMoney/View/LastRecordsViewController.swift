@@ -17,7 +17,7 @@ class LastRecordsViewController: UIViewController {
         view.backgroundColor = .white
         
         //Example
-        for i in 1...16 {
+        for _ in 1...16 {
             data.append(CellItem(data: DataItem(id: UUID().uuidString)))
         }
         
