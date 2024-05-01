@@ -141,6 +141,9 @@ class ChangeBalanceViewController: UIViewController {
             
         ])
     }
+    func doSomethingWithData(data: String) {
+        
+    }
 }
 
 

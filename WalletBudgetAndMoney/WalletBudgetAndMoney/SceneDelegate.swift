@@ -16,7 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController =  /*ChangeBalanceViewController()*/ MainViewController()
+        let vc = StatisticsViewController()
+        vc.collectionItems = [CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString))]
+        window.rootViewController = vc
         window.makeKeyAndVisible()
         self.window = window
     }

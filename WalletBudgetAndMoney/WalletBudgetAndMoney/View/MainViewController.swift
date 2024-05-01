@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
             cell.data = self.dataItems
         }
         
-        let TopExpensesCellRegistration = UICollectionView.CellRegistration<TopExpensesCollectionViewCell, CellItem> {
+        let topExpensesCellRegistration = UICollectionView.CellRegistration<TopExpensesCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             cell.data = self.dataItems
         }
@@ -90,7 +90,7 @@ class MainViewController: UIViewController {
                     let cell = collectionView.dequeueConfiguredReusableCell(using: cashFlowCellRegistration, for: indexPath, item: itemIdentifier)
                     return cell
                 } else {
-                    let cell = collectionView.dequeueConfiguredReusableCell(using: TopExpensesCellRegistration, for: indexPath, item: itemIdentifier)
+                    let cell = collectionView.dequeueConfiguredReusableCell(using: topExpensesCellRegistration, for: indexPath, item: itemIdentifier)
                     return cell
                 }
 

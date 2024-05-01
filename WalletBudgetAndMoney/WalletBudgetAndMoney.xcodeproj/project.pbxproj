@@ -42,6 +42,9 @@
 		F76A0B452BDD4502008E761B /* ChangeBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B442BDD4502008E761B /* ChangeBalanceViewController.swift */; };
 		F76A0B472BDD7224008E761B /* ChangeBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */; };
 		F76A0B492BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */; };
+		F76A0B4B2BE0605E008E761B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B4A2BE0605E008E761B /* CategoryViewController.swift */; };
+		F76A0B4D2BE1130B008E761B /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B4C2BE1130B008E761B /* StatisticsViewController.swift */; };
+		F76A0B4F2BE114DB008E761B /* StatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B4E2BE114DB008E761B /* StatisticsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,9 @@
 		F76A0B442BDD4502008E761B /* ChangeBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBalanceViewController.swift; sourceTree = "<group>"; };
 		F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBalanceDateTableViewCell.swift; sourceTree = "<group>"; };
+		F76A0B4A2BE0605E008E761B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		F76A0B4C2BE1130B008E761B /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		F76A0B4E2BE114DB008E761B /* StatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +251,10 @@
 				F76A0B3A2BDC4DA1008E761B /* LastRecordsViewController.swift */,
 				F76A0B442BDD4502008E761B /* ChangeBalanceViewController.swift */,
 				F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */,
+				F76A0B4C2BE1130B008E761B /* StatisticsViewController.swift */,
+				F76A0B4E2BE114DB008E761B /* StatisticsCollectionViewCell.swift */,
 				F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */,
+				F76A0B4A2BE0605E008E761B /* CategoryViewController.swift */,
 				F76A0B3C2BDC4DB5008E761B /* TopExpensesViewController.swift */,
 				F76A0B3E2BDC6D60008E761B /* HeaderView.swift */,
 				F76A0B342BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift */,
@@ -531,6 +540,7 @@
 				F76A0B3B2BDC4DA1008E761B /* LastRecordsViewController.swift in Sources */,
 				F76A0B452BDD4502008E761B /* ChangeBalanceViewController.swift in Sources */,
 				F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */,
+				F76A0B4B2BE0605E008E761B /* CategoryViewController.swift in Sources */,
 				F76A0B1E2BDA9579008E761B /* LastRecordsCollectionViewCell.swift in Sources */,
 				F76A0B3D2BDC4DB5008E761B /* TopExpensesViewController.swift in Sources */,
 				F76A0B322BDBD748008E761B /* Date+Formater.swift in Sources */,
@@ -541,6 +551,8 @@
 				F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */,
 				F76A0B3F2BDC6D60008E761B /* HeaderView.swift in Sources */,
 				F76A0B302BDBD748008E761B /* ComplexeGraphViewController.swift in Sources */,
+				F76A0B4F2BE114DB008E761B /* StatisticsCollectionViewCell.swift in Sources */,
+				F76A0B4D2BE1130B008E761B /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
