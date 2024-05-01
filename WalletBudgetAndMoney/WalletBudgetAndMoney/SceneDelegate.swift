@@ -16,8 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let vc = StatisticsViewController()
-        vc.collectionItems = [CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString)), CellItem(account: AccountItem(id: UUID().uuidString))]
+        let vc = UINavigationController(rootViewController: TabBarController())
         window.rootViewController = vc
         window.makeKeyAndVisible()
         self.window = window

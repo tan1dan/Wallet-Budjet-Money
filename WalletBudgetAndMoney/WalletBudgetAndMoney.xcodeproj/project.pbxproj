@@ -10,6 +10,7 @@
 		3BCA8292D12F86A4924B87B0 /* Pods_WalletBudgetAndMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69954557517FABD455492EAE /* Pods_WalletBudgetAndMoneyTests.framework */; };
 		75A53C8B5314FC99CBE23FC2 /* Pods_WalletBudgetAndMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432219333CE537EDF1D5CDB0 /* Pods_WalletBudgetAndMoney.framework */; };
 		79975B5038BB5271135C5CF3 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41D8485F88EF8EA453A6955 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework */; };
+		F7365F5A2BE2A5BF006A0A9B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7365F592BE2A5BF006A0A9B /* TabBarController.swift */; };
 		F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */; };
 		F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */; };
 		F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE72BD1A2EF008E761B /* MainViewController.swift */; };
@@ -74,6 +75,7 @@
 		8DEEE58CC5BB16CEC7B8DFE1 /* Pods-WalletBudgetAndMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletBudgetAndMoney.debug.xcconfig"; path = "Target Support Files/Pods-WalletBudgetAndMoney/Pods-WalletBudgetAndMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		B41D8485F88EF8EA453A6955 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DECC3123DF2E384C34E34A /* Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests/Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F7365F592BE2A5BF006A0A9B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F76A0AE02BD1A2EF008E761B /* WalletBudgetAndMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletBudgetAndMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F7365F5B2BE2B2AA006A0A9B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */,
+				F76A0B4E2BE114DB008E761B /* StatisticsCollectionViewCell.swift */,
+				F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */,
+				F76A0B342BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift */,
+				F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */,
+				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
+				F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */,
+				F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */,
+				F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */,
+				F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F7365F5C2BE2B2D0006A0A9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F76A0B3E2BDC6D60008E761B /* HeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F76A0AD72BD1A2EF008E761B = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +218,6 @@
 		F76A0AE22BD1A2EF008E761B /* WalletBudgetAndMoney */ = {
 			isa = PBXGroup;
 			children = (
-				F76A0B332BDBD753008E761B /* ComplexSample */,
 				F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */,
 				F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */,
 				F76A0B402BDD442A008E761B /* Model */,
@@ -226,8 +252,6 @@
 		F76A0B332BDBD753008E761B /* ComplexSample */ = {
 			isa = PBXGroup;
 			children = (
-				F76A0B2B2BDBD748008E761B /* ComplexeGraphViewController.swift */,
-				F76A0B2C2BDBD748008E761B /* GraphDataModel.swift */,
 				F76A0B2D2BDBD748008E761B /* Date+Formater.swift */,
 				F76A0B292BDBD748008E761B /* ReportDetail.swift */,
 				F76A0B2A2BDBD748008E761B /* UIColor+ComplexeGraph.swift */,
@@ -238,6 +262,7 @@
 		F76A0B402BDD442A008E761B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F76A0B2C2BDBD748008E761B /* GraphDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,25 +270,18 @@
 		F76A0B412BDD443D008E761B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F76A0B2B2BDBD748008E761B /* ComplexeGraphViewController.swift */,
 				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
+				F7365F592BE2A5BF006A0A9B /* TabBarController.swift */,
 				F76A0B362BDC3BE3008E761B /* BalanceViewController.swift */,
 				F76A0B382BDC4D85008E761B /* CashFlowViewController.swift */,
 				F76A0B3A2BDC4DA1008E761B /* LastRecordsViewController.swift */,
 				F76A0B442BDD4502008E761B /* ChangeBalanceViewController.swift */,
-				F76A0B462BDD7224008E761B /* ChangeBalanceTableViewCell.swift */,
 				F76A0B4C2BE1130B008E761B /* StatisticsViewController.swift */,
-				F76A0B4E2BE114DB008E761B /* StatisticsCollectionViewCell.swift */,
-				F76A0B482BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift */,
 				F76A0B4A2BE0605E008E761B /* CategoryViewController.swift */,
 				F76A0B3C2BDC4DB5008E761B /* TopExpensesViewController.swift */,
-				F76A0B3E2BDC6D60008E761B /* HeaderView.swift */,
-				F76A0B342BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift */,
-				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
-				F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */,
-				F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */,
-				F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */,
-				F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */,
-				F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */,
+				F7365F5C2BE2B2D0006A0A9B /* Views */,
+				F7365F5B2BE2B2AA006A0A9B /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +296,7 @@
 		F76A0B432BDD4474008E761B /* Resources+Help */ = {
 			isa = PBXGroup;
 			children = (
+				F76A0B332BDBD753008E761B /* ComplexSample */,
 				F76A0B232BDA9662008E761B /* UIView+ext.swift */,
 				F76A0B152BD29D70008E761B /* CellItem.swift */,
 				F76A0B192BD5BFC9008E761B /* Resources.swift */,
@@ -527,6 +546,7 @@
 				F76A0B202BDA959C008E761B /* CashFlowCollectionViewCell.swift in Sources */,
 				F76A0B392BDC4D85008E761B /* CashFlowViewController.swift in Sources */,
 				F76A0B2F2BDBD748008E761B /* UIColor+ComplexeGraph.swift in Sources */,
+				F7365F5A2BE2A5BF006A0A9B /* TabBarController.swift in Sources */,
 				F76A0B162BD29D70008E761B /* CellItem.swift in Sources */,
 				F76A0B352BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift in Sources */,
 				F76A0B262BDAA04C008E761B /* AccountsAddCollectionViewCell.swift in Sources */,
