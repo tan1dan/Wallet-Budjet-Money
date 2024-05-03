@@ -13,7 +13,7 @@ class AccountsAddCollectionViewCell: UICollectionViewCell {
     let logoViewAddCell = UIView()
     let imageViewAddCell = UIImageView(image: UIImage(systemName: "plus"))
     let logoViewAddCellHeight: CGFloat = 40
-    
+    var logoViewAddCellPressed: (() -> Void)?
     static let id = "AccountsAddCollectionViewCell"
     
     override init(frame: CGRect) {
@@ -64,6 +64,10 @@ class AccountsAddCollectionViewCell: UICollectionViewCell {
     private func logoViewAddCellParameters(){
         logoViewAddCell.backgroundColor = .systemBlue
         logoViewAddCell.layer.cornerRadius = logoViewAddCellHeight / 2
+        logoViewAddCell.addGestureRecognizer(UIGestureRecognizer(target: nil, action: #selector(logoViewAddCellAction)))
     }
     
+    @objc private func logoViewAddCellAction(){
+        logoViewAddCellPressed?()
+    }
 }

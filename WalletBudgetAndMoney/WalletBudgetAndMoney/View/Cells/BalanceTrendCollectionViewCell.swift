@@ -17,7 +17,7 @@ class BalanceTrendCollectionViewCell: UICollectionViewCell {
     let labelDateBalanceTrend = UILabel()
     let labelAmountBalanceTrend = UILabel()
     let buttonShowMoreBalanceTrend = UIButton()
-    
+    var buttonShowMorePressed: (() -> Void)?
     var data: [CellItem] = []
     
     override init(frame: CGRect) {
@@ -83,6 +83,10 @@ class BalanceTrendCollectionViewCell: UICollectionViewCell {
     
     private func buttonShowMoreBalanceTrendParameters(){
         buttonShowMoreBalanceTrend.setAttributedTitle(UIView.stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
+        buttonShowMoreBalanceTrend.addTarget(nil, action: #selector(buttonShowMoreAction), for: .touchUpInside)
     }
     
+    @objc private func buttonShowMoreAction(){
+        buttonShowMorePressed?()
+    }
 }

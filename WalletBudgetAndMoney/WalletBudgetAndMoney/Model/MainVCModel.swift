@@ -5,4 +5,8 @@
 //  Created by Иван Знак on 03/05/2024.
 //
 
-import Foundation
+import UIKit
+
+class MainVCModel {
+    
+}

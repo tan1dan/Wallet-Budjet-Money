@@ -82,6 +82,7 @@ class ChangeBalanceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutConstraints()
+        nvParameters()
         view.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
@@ -92,6 +93,10 @@ class ChangeBalanceViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         buttonSave.layer.cornerRadius = buttonSave.frame.size.height / 4
+    }
+    
+    private func nvParameters(){
+        navigationItem.title = "Добавить запись"
     }
     
     private func layoutConstraints(){
@@ -109,6 +114,7 @@ class ChangeBalanceViewController: UIViewController {
             segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 10),
             segmentedControl.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10),
+            segmentedControl.heightAnchor.constraint(equalToConstant: 30),
             
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

@@ -15,6 +15,7 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
     let buttonShowMoreTopExpenses = UIButton()
     
     var data: [CellItem] = []
+    var buttonShowMorePressed: (() -> Void)?
     
     static let id = "TopExpensesCollectionViewCell"
     
@@ -80,6 +81,11 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
     
     private func buttonShowMoreTopExpensesParameters(){
         buttonShowMoreTopExpenses.setAttributedTitle(UIView.stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
+        buttonShowMoreTopExpenses.addTarget(nil, action: #selector(buttonShowMoreAction), for: .touchUpInside)
+    }
+    
+    @objc private func buttonShowMoreAction(){
+        buttonShowMorePressed?()
     }
     
     private func viewToStackViewCashFLow(stackView: inout UIStackView, maxAmount: Double, totalAmount: Double, title: String, color: UIColor){

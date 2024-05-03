@@ -14,6 +14,7 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
     let buttonShowMoreLastRecords = UIButton()
 
     var data: [CellItem] = []
+    var buttonShowMorePressed: (() -> Void)?
     
     static let id = "LastRecordsCollectionViewCell"
     
@@ -64,10 +65,15 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
     
     private func buttonShowMoreLastRecordsParameters(){
         buttonShowMoreLastRecords.setAttributedTitle(UIView.stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
+        buttonShowMoreLastRecords.addTarget(nil, action: #selector(buttonShowMoreAction), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func buttonShowMoreAction(){
+        buttonShowMorePressed?()
     }
     
 }
@@ -75,7 +81,7 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
 extension LastRecordsCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

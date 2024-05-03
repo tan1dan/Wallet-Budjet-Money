@@ -11,6 +11,7 @@
 		75A53C8B5314FC99CBE23FC2 /* Pods_WalletBudgetAndMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432219333CE537EDF1D5CDB0 /* Pods_WalletBudgetAndMoney.framework */; };
 		79975B5038BB5271135C5CF3 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41D8485F88EF8EA453A6955 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework */; };
 		F7365F5A2BE2A5BF006A0A9B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7365F592BE2A5BF006A0A9B /* TabBarController.swift */; };
+		F7639AB72BE4E46500507D75 /* MainVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7639AB62BE4E46500507D75 /* MainVCModel.swift */; };
 		F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */; };
 		F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */; };
 		F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE72BD1A2EF008E761B /* MainViewController.swift */; };
@@ -76,6 +77,7 @@
 		B41D8485F88EF8EA453A6955 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DECC3123DF2E384C34E34A /* Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests/Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F7365F592BE2A5BF006A0A9B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F7639AB62BE4E46500507D75 /* MainVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCModel.swift; sourceTree = "<group>"; };
 		F76A0AE02BD1A2EF008E761B /* WalletBudgetAndMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletBudgetAndMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				F76A0B2C2BDBD748008E761B /* GraphDataModel.swift */,
+				F7639AB62BE4E46500507D75 /* MainVCModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */,
 				F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */,
 				F76A0B492BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift in Sources */,
+				F7639AB72BE4E46500507D75 /* MainVCModel.swift in Sources */,
 				F76A0B372BDC3BE3008E761B /* BalanceViewController.swift in Sources */,
 				F76A0B1A2BD5BFC9008E761B /* Resources.swift in Sources */,
 				F76A0B3B2BDC4DA1008E761B /* LastRecordsViewController.swift in Sources */,

@@ -17,6 +17,7 @@ class CashFlowCollectionViewCell: UICollectionViewCell {
     
     static let id = "CashFlowCollectionViewCell"
     
+    var buttonShowMorePressed: (() -> Void)?
     var data: [CellItem] = []
     
     override init(frame: CGRect) {
@@ -84,6 +85,11 @@ class CashFlowCollectionViewCell: UICollectionViewCell {
     
     private func buttonShowMoreCashFlowParameters(){
         buttonShowMoreCashFlow.setAttributedTitle(UIView.stringToNSAttributedString(string: "Показать больше", size: 18, weight: .bold, color: .systemBlue), for: .normal)
+        buttonShowMoreCashFlow.addTarget(nil, action: #selector(buttonShowMoreAction), for: .touchUpInside)
+    }
+    
+    @objc private func buttonShowMoreAction(){
+        buttonShowMorePressed?()
     }
     
     private func viewToStackViewCashFLow(stackView: inout UIStackView, maxAmount: Double, totalAmount: Double, title: String, color: UIColor){

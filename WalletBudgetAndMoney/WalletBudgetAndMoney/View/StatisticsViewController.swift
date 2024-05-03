@@ -9,9 +9,16 @@ import UIKit
 
 class StatisticsViewController: UIViewController, UICollectionViewDelegate {
     
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.attributedText = UIView.stringToNSAttributedString(string: "Статистика", size: 35, weight: .bold, color: .black)
+        return label
+    }()
+    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: getCompositionalLayout())
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
-    var collectionItems: [CellItem] = []
+    var collectionItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +50,12 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
     func layoutVC(){
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
+        view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)

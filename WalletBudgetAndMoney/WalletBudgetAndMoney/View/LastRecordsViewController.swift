@@ -15,7 +15,7 @@ class LastRecordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        nvParameters()
         //Example
         for _ in 1...16 {
             data.append(CellItem(data: DataItem(id: UUID().uuidString)))
@@ -43,6 +43,9 @@ class LastRecordsViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
         ])
+    }
+    private func nvParameters(){
+        navigationItem.title = "Транзакции"
     }
     
 }

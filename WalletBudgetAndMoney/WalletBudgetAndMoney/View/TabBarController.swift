@@ -23,7 +23,8 @@ class TabBarController: UITabBarController {
     
     private func setupTabs(){
         self.setViewControllers([], animated: false)
-        self.tabBar.tintColor = .systemGray2
+        self.tabBar.tintColor = .black
+        self.tabBar.unselectedItemTintColor = .systemGray2
         let mainVC = MainViewController()
         let statiisticsVC: UIViewController = {
             let vc = StatisticsViewController()

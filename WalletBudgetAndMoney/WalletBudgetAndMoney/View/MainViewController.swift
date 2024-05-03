@@ -46,27 +46,49 @@ class MainViewController: UIViewController {
         
         let accountsAddCellRegistration = UICollectionView.CellRegistration<AccountsAddCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
-            
+            cell.logoViewAddCellPressed = { [weak self] in
+                
+            }
         }
         
         let balanceTrendCellRegistration = UICollectionView.CellRegistration<BalanceTrendCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
-            cell.data = self.dataItems
+            
+            cell.buttonShowMorePressed = { [weak self] in
+                let vc = BalanceViewController()
+                self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
+                self?.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: false)
+            }
         }
         
         let lastRecordsCellRegistration = UICollectionView.CellRegistration<LastRecordsCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             cell.data = self.dataItems
+            cell.buttonShowMorePressed = { [weak self] in
+                let vc = LastRecordsViewController()
+                self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
+                self?.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: false)
+            }
         }
         
         let cashFlowCellRegistration = UICollectionView.CellRegistration<CashFlowCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             cell.data = self.dataItems
+            cell.buttonShowMorePressed = { [weak self] in
+                let vc = CashFlowViewController()
+                self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
+                self?.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: false)
+            }
         }
         
         let topExpensesCellRegistration = UICollectionView.CellRegistration<TopExpensesCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             cell.data = self.dataItems
+            cell.buttonShowMorePressed = { [weak self] in
+                let vc = TopExpensesViewController()
+                self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
+                self?.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: false)
+            }
         }
         
         

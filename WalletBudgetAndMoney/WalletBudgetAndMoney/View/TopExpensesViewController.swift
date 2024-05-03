@@ -24,7 +24,7 @@ class  TopExpensesViewController: UIViewController, UICollectionViewDelegate {
         collectionView.delegate = self
         let topExpensesCellRegistration = UICollectionView.CellRegistration<TopExpensesCollectionViewCell, CellItem> {
             cell, indexPath, itemIdentifier in
-            
+            cell.labelTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Расходы", size: 26, weight: .bold, color: .black)
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
@@ -79,6 +79,6 @@ class  TopExpensesViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func nvParameters(){
-        navigationItem.title = "Баланс"
+        navigationItem.title = "Расходы"
     }
 }

@@ -80,7 +80,7 @@ class CashFlowViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func nvParameters(){
-        navigationItem.title = "Баланс"
+        navigationItem.title = "Денежный поток"
     }
 }
     
