@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3BCA8292D12F86A4924B87B0 /* Pods_WalletBudgetAndMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69954557517FABD455492EAE /* Pods_WalletBudgetAndMoneyTests.framework */; };
-		75A53C8B5314FC99CBE23FC2 /* Pods_WalletBudgetAndMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432219333CE537EDF1D5CDB0 /* Pods_WalletBudgetAndMoney.framework */; };
 		79975B5038BB5271135C5CF3 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41D8485F88EF8EA453A6955 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework */; };
+		F72BF7072BE5255000FC9AD2 /* ChooseDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BF7062BE5255000FC9AD2 /* ChooseDataViewController.swift */; };
 		F7365F5A2BE2A5BF006A0A9B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7365F592BE2A5BF006A0A9B /* TabBarController.swift */; };
 		F7639AB72BE4E46500507D75 /* MainVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7639AB62BE4E46500507D75 /* MainVCModel.swift */; };
 		F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */; };
@@ -47,6 +47,14 @@
 		F76A0B4B2BE0605E008E761B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B4A2BE0605E008E761B /* CategoryViewController.swift */; };
 		F76A0B4D2BE1130B008E761B /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B4C2BE1130B008E761B /* StatisticsViewController.swift */; };
 		F76A0B4F2BE114DB008E761B /* StatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A0B4E2BE114DB008E761B /* StatisticsCollectionViewCell.swift */; };
+		F76D33232BE50A2B0056C1DA /* SettingsAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D33222BE50A2B0056C1DA /* SettingsAccountViewController.swift */; };
+		F784DC802BE96A310074B855 /* ChooseAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784DC7F2BE96A310074B855 /* ChooseAccountViewController.swift */; };
+		F7A31CF52BE97FCD0076AC50 /* UIViewController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A31CF42BE97FCD0076AC50 /* UIViewController + ext.swift */; };
+		F7BD1DC12BE6C7ED007CEA09 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD1DC02BE6C7ED007CEA09 /* CurrencyViewController.swift */; };
+		F7BD1DC32BE6CD44007CEA09 /* AccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD1DC22BE6CD44007CEA09 /* AccountTypeViewController.swift */; };
+		F7BD1DC52BE8B679007CEA09 /* CustomKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD1DC42BE8B679007CEA09 /* CustomKeyboardViewController.swift */; };
+		F7EAB6522BE9555F00992D1D /* FirstBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EAB6512BE9555F00992D1D /* FirstBalanceViewController.swift */; };
+		F7F4E93D2BE9A7D70064E5FC /* Pods_WalletBudgetAndMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432219333CE537EDF1D5CDB0 /* Pods_WalletBudgetAndMoney.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +84,7 @@
 		8DEEE58CC5BB16CEC7B8DFE1 /* Pods-WalletBudgetAndMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletBudgetAndMoney.debug.xcconfig"; path = "Target Support Files/Pods-WalletBudgetAndMoney/Pods-WalletBudgetAndMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		B41D8485F88EF8EA453A6955 /* Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletBudgetAndMoney_WalletBudgetAndMoneyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DECC3123DF2E384C34E34A /* Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests/Pods-WalletBudgetAndMoney-WalletBudgetAndMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F72BF7062BE5255000FC9AD2 /* ChooseDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDataViewController.swift; sourceTree = "<group>"; };
 		F7365F592BE2A5BF006A0A9B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F7639AB62BE4E46500507D75 /* MainVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCModel.swift; sourceTree = "<group>"; };
 		F76A0AE02BD1A2EF008E761B /* WalletBudgetAndMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletBudgetAndMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +126,13 @@
 		F76A0B4A2BE0605E008E761B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		F76A0B4C2BE1130B008E761B /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		F76A0B4E2BE114DB008E761B /* StatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76D33222BE50A2B0056C1DA /* SettingsAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountViewController.swift; sourceTree = "<group>"; };
+		F784DC7F2BE96A310074B855 /* ChooseAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAccountViewController.swift; sourceTree = "<group>"; };
+		F7A31CF42BE97FCD0076AC50 /* UIViewController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ext.swift"; sourceTree = "<group>"; };
+		F7BD1DC02BE6C7ED007CEA09 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		F7BD1DC22BE6CD44007CEA09 /* AccountTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeViewController.swift; sourceTree = "<group>"; };
+		F7BD1DC42BE8B679007CEA09 /* CustomKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboardViewController.swift; sourceTree = "<group>"; };
+		F7EAB6512BE9555F00992D1D /* FirstBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBalanceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75A53C8B5314FC99CBE23FC2 /* Pods_WalletBudgetAndMoney.framework in Frameworks */,
+				F7F4E93D2BE9A7D70064E5FC /* Pods_WalletBudgetAndMoney.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +299,13 @@
 				F76A0B4C2BE1130B008E761B /* StatisticsViewController.swift */,
 				F76A0B4A2BE0605E008E761B /* CategoryViewController.swift */,
 				F76A0B3C2BDC4DB5008E761B /* TopExpensesViewController.swift */,
+				F76D33222BE50A2B0056C1DA /* SettingsAccountViewController.swift */,
+				F72BF7062BE5255000FC9AD2 /* ChooseDataViewController.swift */,
+				F7BD1DC02BE6C7ED007CEA09 /* CurrencyViewController.swift */,
+				F7BD1DC22BE6CD44007CEA09 /* AccountTypeViewController.swift */,
+				F7EAB6512BE9555F00992D1D /* FirstBalanceViewController.swift */,
+				F7BD1DC42BE8B679007CEA09 /* CustomKeyboardViewController.swift */,
+				F784DC7F2BE96A310074B855 /* ChooseAccountViewController.swift */,
 				F7365F5C2BE2B2D0006A0A9B /* Views */,
 				F7365F5B2BE2B2AA006A0A9B /* Cells */,
 			);
@@ -301,6 +324,7 @@
 			children = (
 				F76A0B332BDBD753008E761B /* ComplexSample */,
 				F76A0B232BDA9662008E761B /* UIView+ext.swift */,
+				F7A31CF42BE97FCD0076AC50 /* UIViewController + ext.swift */,
 				F76A0B152BD29D70008E761B /* CellItem.swift */,
 				F76A0B192BD5BFC9008E761B /* Resources.swift */,
 			);
@@ -553,26 +577,34 @@
 				F76A0B162BD29D70008E761B /* CellItem.swift in Sources */,
 				F76A0B352BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift in Sources */,
 				F76A0B262BDAA04C008E761B /* AccountsAddCollectionViewCell.swift in Sources */,
+				F7BD1DC32BE6CD44007CEA09 /* AccountTypeViewController.swift in Sources */,
+				F7EAB6522BE9555F00992D1D /* FirstBalanceViewController.swift in Sources */,
 				F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */,
 				F76A0B312BDBD748008E761B /* GraphDataModel.swift in Sources */,
 				F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */,
 				F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */,
+				F7BD1DC52BE8B679007CEA09 /* CustomKeyboardViewController.swift in Sources */,
 				F76A0B492BDFE84E008E761B /* ChangeBalanceDateTableViewCell.swift in Sources */,
 				F7639AB72BE4E46500507D75 /* MainVCModel.swift in Sources */,
+				F72BF7072BE5255000FC9AD2 /* ChooseDataViewController.swift in Sources */,
 				F76A0B372BDC3BE3008E761B /* BalanceViewController.swift in Sources */,
 				F76A0B1A2BD5BFC9008E761B /* Resources.swift in Sources */,
 				F76A0B3B2BDC4DA1008E761B /* LastRecordsViewController.swift in Sources */,
 				F76A0B452BDD4502008E761B /* ChangeBalanceViewController.swift in Sources */,
 				F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */,
 				F76A0B4B2BE0605E008E761B /* CategoryViewController.swift in Sources */,
+				F76D33232BE50A2B0056C1DA /* SettingsAccountViewController.swift in Sources */,
 				F76A0B1E2BDA9579008E761B /* LastRecordsCollectionViewCell.swift in Sources */,
+				F7A31CF52BE97FCD0076AC50 /* UIViewController + ext.swift in Sources */,
 				F76A0B3D2BDC4DB5008E761B /* TopExpensesViewController.swift in Sources */,
 				F76A0B322BDBD748008E761B /* Date+Formater.swift in Sources */,
 				F76A0B2E2BDBD748008E761B /* ReportDetail.swift in Sources */,
 				F76A0AE42BD1A2EF008E761B /* AppDelegate.swift in Sources */,
 				F76A0B242BDA9662008E761B /* UIView+ext.swift in Sources */,
+				F7BD1DC12BE6C7ED007CEA09 /* CurrencyViewController.swift in Sources */,
 				F76A0B472BDD7224008E761B /* ChangeBalanceTableViewCell.swift in Sources */,
 				F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */,
+				F784DC802BE96A310074B855 /* ChooseAccountViewController.swift in Sources */,
 				F76A0B3F2BDC6D60008E761B /* HeaderView.swift in Sources */,
 				F76A0B302BDBD748008E761B /* ComplexeGraphViewController.swift in Sources */,
 				F76A0B4F2BE114DB008E761B /* StatisticsCollectionViewCell.swift in Sources */,

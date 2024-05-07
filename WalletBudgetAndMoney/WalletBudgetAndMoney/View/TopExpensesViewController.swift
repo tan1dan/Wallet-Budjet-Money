@@ -79,6 +79,20 @@ class  TopExpensesViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func nvParameters(){
-        navigationItem.title = "Расходы"
+        navigationItem.titleView = {
+            let view = UIView()
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(label)
+            NSLayoutConstraint.activate([
+                label.topAnchor.constraint(equalTo: view.topAnchor),
+                label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            ])
+            label.attributedText = UIView.stringToNSAttributedString(string: "Расходы", size: 18, weight: .semibold , color: .black)
+            return view
+        }()
+        navigationController?.navigationBar.tintColor = .black
     }
 }

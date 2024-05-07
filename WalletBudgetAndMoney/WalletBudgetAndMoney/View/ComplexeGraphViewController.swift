@@ -11,7 +11,7 @@ import SwiftGraphKit
 
 class ComplexeGraphViewController: UIViewController {
     
-    private var model = GraphDataModel()
+    var model = GraphDataModel()
 
     private lazy var graphView: GraphView = {
         let graphView = GraphView()
@@ -158,4 +158,5 @@ extension ComplexeGraphViewController: GraphViewDelegate {
     func longPress(on graphView: GraphView, point: GraphPoint) {}
     
     func endLongPress(on graphView: GraphView) {}
+
 }

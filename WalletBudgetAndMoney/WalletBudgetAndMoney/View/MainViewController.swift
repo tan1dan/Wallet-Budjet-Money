@@ -17,16 +17,33 @@ class MainViewController: UIViewController {
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: getCompositionalLayout())
     let imageView = UIImageView(image: UIImage(resource: .cvBack2))
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
+    var accountItems: [CellItem] = []
+    var dataItems: [CellItem] = []
     
-    var accountItems: [CellItem] = [CellItem(account: AccountItem(id: UUID().uuidString, name: "Наличные", amount: 100.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, name: "Карта", amount: 1000.00, currency: "PLN")), CellItem(account: AccountItem(id: UUID().uuidString, name: "Santander", amount: 4560.01, currency: "PLN")) ,CellItem(account: AccountItem())]
-    var dataItems: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateCollectionViewData()
+    }
+    
+    private func updateCollectionViewData(){
+        accountItems = updateAccountItems()
+        dataItems = updateDataItems()
+        var snapshot = dataSource.snapshot()
+        snapshot.deleteAllItems()
+        snapshot.appendSections([.first, .second])
+        snapshot.appendItems(accountItems, toSection: .first)
+        snapshot.appendItems(dataItems, toSection: .second)
+        dataSource.apply(snapshot, animatingDifferences: true)
+        collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         collectionViewParameters()
         layoutVC()
-        
-        
+        accountItems = updateAccountItems()
+        dataItems = updateDataItems()
         collectionView.register(AccountsCollectionViewCell.self, forCellWithReuseIdentifier: AccountsCollectionViewCell.id)
         collectionView.register(AccountsAddCollectionViewCell.self, forCellWithReuseIdentifier: AccountsAddCollectionViewCell.id)
         
@@ -47,7 +64,9 @@ class MainViewController: UIViewController {
         let accountsAddCellRegistration = UICollectionView.CellRegistration<AccountsAddCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
             cell.logoViewAddCellPressed = { [weak self] in
-                
+                let vc = SettingsAccountViewController()
+                self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
+                self?.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: false)
             }
         }
         
@@ -126,6 +145,29 @@ class MainViewController: UIViewController {
         firstSnapshot.appendItems(dataItems, toSection: .second)
         dataSource.apply(firstSnapshot, animatingDifferences: true)
         
+    }
+    
+    private func updateAccountItems() -> [CellItem]{
+        var arrayItems: [CellItem] = []
+        for item in Model.shared.accounts {
+            arrayItems.append(CellItem(account: item))
+        }
+        arrayItems.append(CellItem(account: AccountItem(id: "AddCell")))
+        return arrayItems
+    }
+    
+    private func updateDataItems() -> [CellItem] {
+        var transactions: [Transaction] = []
+        var dataItems: [CellItem] = []
+        var accounts = Model.shared.accounts
+        for item in accounts {
+            transactions += item.transactions!
+        }
+        transactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30})
+        for  i in 0...3 {
+            dataItems.append(CellItem(data: DataItem(id: UUID().uuidString, transactions: transactions)))
+        }
+        return dataItems
     }
     
     func layoutVC(){
