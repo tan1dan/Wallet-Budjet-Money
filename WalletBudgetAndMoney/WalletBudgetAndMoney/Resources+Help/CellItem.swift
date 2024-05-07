@@ -23,15 +23,48 @@ struct AccountItem: Hashable {
 
 struct Transaction: Hashable {
     var id: String
-    var account: AccountItem
+//    var account: AccountItem
     var name: String
     var type: Types
-    var subType: SubTypes
-    var category: String
+//    var subType: SubTypes
+    var category: Category
     var date: Date
     var amount: Double
+    var restAmount: Double
 }
 
 struct DataItem: Hashable {
     var id: String?
+    var transactions: [Transaction]
+}
+
+struct SettingsItem: Hashable {
+    var id: String?
+    var text: String?
+    var image: UIImage?
+    var date: Date?
+}
+
+struct CurrencyItem: Hashable {
+    var id: String
+    var name: String
+}
+
+struct AccountTypeItem: Hashable {
+    var id: String
+    var type: String
+    var image: UIImage?
+}
+
+enum Category: Hashable {
+    case income
+    case extense
+}
+
+enum Time {
+    case week
+    case month
+    case threeMonth
+    case halfYear
+    case year
 }

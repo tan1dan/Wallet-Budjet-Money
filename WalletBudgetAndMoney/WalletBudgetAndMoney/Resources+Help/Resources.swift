@@ -823,4 +823,3 @@ enum Income: Hashable {
     static let presents = "Подарки"
 }
 
-
