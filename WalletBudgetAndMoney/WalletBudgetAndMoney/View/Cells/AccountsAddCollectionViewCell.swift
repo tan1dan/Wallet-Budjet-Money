@@ -24,6 +24,8 @@ class AccountsAddCollectionViewCell: UICollectionViewCell {
         logoViewAddCellParameters()
         labelAddCell.text = "Добавить счет"
         imageViewAddCell.tintColor = .white
+        
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(logoViewAddCellAction)))
     }
     
     required init?(coder: NSCoder) {
@@ -64,7 +66,6 @@ class AccountsAddCollectionViewCell: UICollectionViewCell {
     private func logoViewAddCellParameters(){
         logoViewAddCell.backgroundColor = .systemBlue
         logoViewAddCell.layer.cornerRadius = logoViewAddCellHeight / 2
-        logoViewAddCell.addGestureRecognizer(UIGestureRecognizer(target: nil, action: #selector(logoViewAddCellAction)))
     }
     
     @objc private func logoViewAddCellAction(){

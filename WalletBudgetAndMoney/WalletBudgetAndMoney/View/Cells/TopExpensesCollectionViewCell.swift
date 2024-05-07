@@ -38,9 +38,7 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
         stackViewTopExpenses.spacing = 5
         
         labelTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Топ расходов", size: 26, weight: .bold, color: .black)
-        labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
-        )
-        
+        labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray)
         
     }
     

@@ -38,12 +38,17 @@ class ChangeBalanceDateTableViewCell: UITableViewCell {
         return separator
     }()
     
-   
+    var closure: ((Date) -> ())?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutContraints()
         datePickerParameters()
+        
+    }
+    
+    @objc func datePickerValueChanged(){
+        closure?(datePicker.date)
     }
     
     required init?(coder: NSCoder) {
@@ -55,6 +60,7 @@ class ChangeBalanceDateTableViewCell: UITableViewCell {
         datePicker.date = Date()
         datePicker.maximumDate = Date()
         datePicker.locale = Locale(identifier: "ru_RU")
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
     }
     
     private func layoutContraints(){

@@ -14,7 +14,7 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
     let labelTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.attributedText = UIView.stringToNSAttributedString(string: "Доход", size: 18, weight: .medium, color: .systemGray2)
+        label.attributedText = UIView.stringToNSAttributedString(string: "Доход", size: 18, weight: .bold, color: .systemGray2)
         return label
     }()
     

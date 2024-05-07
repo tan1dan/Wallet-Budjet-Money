@@ -89,4 +89,9 @@ class BalanceTrendCollectionViewCell: UICollectionViewCell {
     @objc private func buttonShowMoreAction(){
         buttonShowMorePressed?()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        graph.model.updateData()
+    }
 }

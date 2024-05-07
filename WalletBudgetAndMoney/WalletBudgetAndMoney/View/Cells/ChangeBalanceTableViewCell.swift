@@ -73,6 +73,7 @@ class ChangeBalanceTableViewCell: UITableViewCell {
             
             labelSelect.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             labelSelect.centerYAnchor.constraint(equalTo: labelCategory.centerYAnchor),
+            labelSelect.widthAnchor.constraint(lessThanOrEqualToConstant: self.contentView.frame.size.width / 2),
         ])
     }
     
