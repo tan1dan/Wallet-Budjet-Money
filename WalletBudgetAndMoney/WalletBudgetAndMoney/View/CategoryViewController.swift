@@ -17,7 +17,7 @@ class CategoryViewController: UIViewController {
     
     var data: [CategoryItem] = []
     var type: Types?
-    var onDataAvailable:((_ data: String) -> ())?
+    var closure: ((String) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class CategoryViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(ChangeBalanceTableViewCell.self, forCellReuseIdentifier: ChangeBalanceTableViewCell.id)
         layoutConstraints()
-        
+        nvParameters()
     }
     
     private func layoutConstraints(){
@@ -39,8 +39,22 @@ class CategoryViewController: UIViewController {
         ])
     }
     
-    func sendData(data: String) {
-        self.onDataAvailable?(data)
+    private func nvParameters(){
+        navigationItem.titleView = {
+            let view = UIView()
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(label)
+            NSLayoutConstraint.activate([
+                label.topAnchor.constraint(equalTo: view.topAnchor),
+                label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            ])
+            label.attributedText = UIView.stringToNSAttributedString(string: "Выбрать категорию", size: 18, weight: .semibold , color: .black)
+            return view
+        }()
+        navigationController?.navigationBar.tintColor = .black
     }
 }
 
@@ -70,219 +84,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let type = self.type else {return}
-        switch type {
-            
-        case .foodAndDrinks:
-            switch data[indexPath.row].subType.foodAndDrinks {
-            case .food:
-                 return
-            case .products:
-                return
-            case .restaurants:
-                return
-            case .bars:
-                return
-            case .none:
-                return
-            }
-        case .buys:
-            switch data[indexPath.row].subType.buys {
-            case .buys:
-                return
-            case .clothes:
-                return
-            case .jewellery:
-                return
-            case .beauty:
-                return
-            case .children:
-                return
-            case .home:
-                return
-            case .pets:
-                return
-            case .electronics:
-                return
-            case .presents:
-                return
-            case .instruments:
-                return
-            case .freeTime:
-                return
-            case .farmacy:
-                return
-            case .none:
-                return
-            }
-        case .house:
-            switch data[indexPath.row].subType.house {
-            case .house:
-                return
-            case .rent:
-                return
-            case .mortgage:
-                return
-            case .utilities:
-                return
-            case .service:
-                return
-            case .repair:
-                return
-            case .insurance:
-                return
-            case .none:
-                return
-            }
-        case .transport:
-            switch data[indexPath.row].subType.transport {
-            case .transport:
-                return
-            case .publicTransport:
-                return
-            case .taxi:
-                return
-            case .longTrips:
-                return
-            case .dealTrips:
-                return
-            case .none:
-                return
-            }
-        case .car:
-            switch data[indexPath.row].subType.car {
-            case .car:
-                return
-            case .fuel:
-                return
-            case .parking:
-                return
-            case .techService:
-                return
-            case .rent:
-                return
-            case .insurance:
-                return
-            case .leasing:
-                return
-            case .none:
-                return
-            }
-        case .relax:
-            switch data[indexPath.row].subType.relax {
-            case .relax:
-                return
-            case .treatment:
-                return
-            case .beauty:
-                return
-            case .sport:
-                return
-            case .culture:
-                return
-            case .parties:
-                return
-            case .hobby:
-                return
-            case .education:
-                return
-            case .books:
-                return
-            case .tv:
-                return
-            case .trips:
-                return
-            case .presents:
-                return
-            case .alcoholy:
-                return
-            case .lotteries:
-                return
-            case .none:
-                return
-            }
-        case .communication:
-            switch data[indexPath.row].subType.communication {
-            case .communcitaion:
-                return
-            case .phone:
-                return
-            case .internet:
-                return
-            case .games:
-                return
-            case .post:
-                return
-            case .none:
-                return
-            }
-        case .finance:
-            switch data[indexPath.row].subType.finance {
-            case .finance:
-                return
-            case .taxes:
-                return
-            case .insurance:
-                return
-            case .credits:
-                return
-            case .fine:
-                return
-            case .consultion:
-                return
-            case .fees:
-                return
-            case .aliment:
-                return
-            case .none:
-                return
-            }
-        case .invest:
-            switch data[indexPath.row].subType.invest {
-            case .invest:
-                return
-            case .realEstate:
-                return
-            case .transport:
-                return
-            case .financeInvest:
-                return
-            case .saving:
-                return
-            case .collection:
-                return
-            case .none:
-                return
-            }
-        case .income:
-            switch data[indexPath.row].subType.income {
-            case .income:
-                return
-            case .salary:
-                return
-            case .percents:
-                return
-            case .selling:
-                return
-            case .rent:
-                return
-            case .grants:
-                return
-            case .credit:
-                return
-            case .vouchers:
-                return
-            case .lotteries:
-                return
-            case .returning:
-                return
-            case .aliment:
-                return
-            case .presents:
-                return
-            case .none:
-                return
-            }
-        }
+        closure?(data[indexPath.row].text)
+        navigationController?.popViewController(animated: true)
     }
 }
