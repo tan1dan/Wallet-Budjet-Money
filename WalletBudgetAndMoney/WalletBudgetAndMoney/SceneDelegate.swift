@@ -16,7 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let vc = UINavigationController(rootViewController: TabBarController())
+        var vc = UINavigationController()
+        
+        if UserDefaultsManager.shared.read(key: UserDefaultsManager.key) == nil {
+            vc = UINavigationController(rootViewController: SetFirtstMoneyViewController())
+        } else {
+            vc = UINavigationController(rootViewController: TabBarController())
+        }
         window.rootViewController = vc
         window.makeKeyAndVisible()
         self.window = window

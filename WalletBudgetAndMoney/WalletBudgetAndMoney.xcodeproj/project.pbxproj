@@ -53,6 +53,10 @@
 		F7BD1DC12BE6C7ED007CEA09 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD1DC02BE6C7ED007CEA09 /* CurrencyViewController.swift */; };
 		F7BD1DC32BE6CD44007CEA09 /* AccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD1DC22BE6CD44007CEA09 /* AccountTypeViewController.swift */; };
 		F7BD1DC52BE8B679007CEA09 /* CustomKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD1DC42BE8B679007CEA09 /* CustomKeyboardViewController.swift */; };
+		F7DE96772BF2765400AF7373 /* AllExpensesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE96762BF2765400AF7373 /* AllExpensesCollectionViewCell.swift */; };
+		F7DE96792BF27A1E00AF7373 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE96782BF27A1E00AF7373 /* SegmentControlView.swift */; };
+		F7DE967B2BF3ABEA00AF7373 /* UserDeafualtsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE967A2BF3ABEA00AF7373 /* UserDeafualtsManager.swift */; };
+		F7DE967D2BF3DB6600AF7373 /* SetFirtstMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DE967C2BF3DB6600AF7373 /* SetFirtstMoneyViewController.swift */; };
 		F7EAB6522BE9555F00992D1D /* FirstBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EAB6512BE9555F00992D1D /* FirstBalanceViewController.swift */; };
 		F7F4E93D2BE9A7D70064E5FC /* Pods_WalletBudgetAndMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432219333CE537EDF1D5CDB0 /* Pods_WalletBudgetAndMoney.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +136,10 @@
 		F7BD1DC02BE6C7ED007CEA09 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		F7BD1DC22BE6CD44007CEA09 /* AccountTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeViewController.swift; sourceTree = "<group>"; };
 		F7BD1DC42BE8B679007CEA09 /* CustomKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboardViewController.swift; sourceTree = "<group>"; };
+		F7DE96762BF2765400AF7373 /* AllExpensesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExpensesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7DE96782BF27A1E00AF7373 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
+		F7DE967A2BF3ABEA00AF7373 /* UserDeafualtsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeafualtsManager.swift; sourceTree = "<group>"; };
+		F7DE967C2BF3DB6600AF7373 /* SetFirtstMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFirtstMoneyViewController.swift; sourceTree = "<group>"; };
 		F7EAB6512BE9555F00992D1D /* FirstBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBalanceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +204,7 @@
 				F76A0B252BDAA04C008E761B /* AccountsAddCollectionViewCell.swift */,
 				F76A0B132BD29CB4008E761B /* AccountsCollectionViewCell.swift */,
 				F76A0B212BDA95B4008E761B /* TopExpensesCollectionViewCell.swift */,
+				F7DE96762BF2765400AF7373 /* AllExpensesCollectionViewCell.swift */,
 				F76A0B1D2BDA9578008E761B /* LastRecordsCollectionViewCell.swift */,
 				F76A0B1F2BDA959C008E761B /* CashFlowCollectionViewCell.swift */,
 				F76A0B1B2BD69E56008E761B /* LastRecordsTableViewCell.swift */,
@@ -207,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				F76A0B3E2BDC6D60008E761B /* HeaderView.swift */,
+				F7DE96782BF27A1E00AF7373 /* SegmentControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,7 +250,6 @@
 				F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */,
 				F76A0B402BDD442A008E761B /* Model */,
 				F76A0B412BDD443D008E761B /* View */,
-				F76A0B422BDD444C008E761B /* Presenter */,
 				F76A0B432BDD4474008E761B /* Resources+Help */,
 				F76A0AE92BD1A2EF008E761B /* Main.storyboard */,
 				F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */,
@@ -282,6 +291,7 @@
 			children = (
 				F76A0B2C2BDBD748008E761B /* GraphDataModel.swift */,
 				F7639AB62BE4E46500507D75 /* MainVCModel.swift */,
+				F7DE967A2BF3ABEA00AF7373 /* UserDeafualtsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,17 +316,11 @@
 				F7EAB6512BE9555F00992D1D /* FirstBalanceViewController.swift */,
 				F7BD1DC42BE8B679007CEA09 /* CustomKeyboardViewController.swift */,
 				F784DC7F2BE96A310074B855 /* ChooseAccountViewController.swift */,
+				F7DE967C2BF3DB6600AF7373 /* SetFirtstMoneyViewController.swift */,
 				F7365F5C2BE2B2D0006A0A9B /* Views */,
 				F7365F5B2BE2B2AA006A0A9B /* Cells */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F76A0B422BDD444C008E761B /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		F76A0B432BDD4474008E761B /* Resources+Help */ = {
@@ -576,10 +580,12 @@
 				F7365F5A2BE2A5BF006A0A9B /* TabBarController.swift in Sources */,
 				F76A0B162BD29D70008E761B /* CellItem.swift in Sources */,
 				F76A0B352BDBD81B008E761B /* BalanceTrendCollectionViewCell.swift in Sources */,
+				F7DE967B2BF3ABEA00AF7373 /* UserDeafualtsManager.swift in Sources */,
 				F76A0B262BDAA04C008E761B /* AccountsAddCollectionViewCell.swift in Sources */,
 				F7BD1DC32BE6CD44007CEA09 /* AccountTypeViewController.swift in Sources */,
 				F7EAB6522BE9555F00992D1D /* FirstBalanceViewController.swift in Sources */,
 				F76A0B142BD29CB4008E761B /* AccountsCollectionViewCell.swift in Sources */,
+				F7DE967D2BF3DB6600AF7373 /* SetFirtstMoneyViewController.swift in Sources */,
 				F76A0B312BDBD748008E761B /* GraphDataModel.swift in Sources */,
 				F76A0B222BDA95B4008E761B /* TopExpensesCollectionViewCell.swift in Sources */,
 				F76A0B1C2BD69E56008E761B /* LastRecordsTableViewCell.swift in Sources */,
@@ -594,6 +600,7 @@
 				F76A0AE82BD1A2EF008E761B /* MainViewController.swift in Sources */,
 				F76A0B4B2BE0605E008E761B /* CategoryViewController.swift in Sources */,
 				F76D33232BE50A2B0056C1DA /* SettingsAccountViewController.swift in Sources */,
+				F7DE96792BF27A1E00AF7373 /* SegmentControlView.swift in Sources */,
 				F76A0B1E2BDA9579008E761B /* LastRecordsCollectionViewCell.swift in Sources */,
 				F7A31CF52BE97FCD0076AC50 /* UIViewController + ext.swift in Sources */,
 				F76A0B3D2BDC4DB5008E761B /* TopExpensesViewController.swift in Sources */,
@@ -603,6 +610,7 @@
 				F76A0B242BDA9662008E761B /* UIView+ext.swift in Sources */,
 				F7BD1DC12BE6C7ED007CEA09 /* CurrencyViewController.swift in Sources */,
 				F76A0B472BDD7224008E761B /* ChangeBalanceTableViewCell.swift in Sources */,
+				F7DE96772BF2765400AF7373 /* AllExpensesCollectionViewCell.swift in Sources */,
 				F76A0AE62BD1A2EF008E761B /* SceneDelegate.swift in Sources */,
 				F784DC802BE96A310074B855 /* ChooseAccountViewController.swift in Sources */,
 				F76A0B3F2BDC6D60008E761B /* HeaderView.swift in Sources */,
