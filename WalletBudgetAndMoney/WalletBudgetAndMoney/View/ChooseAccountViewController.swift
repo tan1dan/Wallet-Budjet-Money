@@ -67,7 +67,7 @@ extension ChooseAccountViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChangeBalanceTableViewCell.id, for: indexPath) as! ChangeBalanceTableViewCell
         cell.selectionStyle = .none
-        cell.imageViewCategory.image = data[indexPath.row].image
+        cell.imageViewCategory.image = UIImage(data: data[indexPath.row].image!) 
         cell.imageViewCategory.layer.cornerRadius = 0
         cell.labelCategory.text = data[indexPath.row].name
         return cell

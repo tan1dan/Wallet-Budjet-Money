@@ -11,7 +11,7 @@ class BalanceViewController: UIViewController, UICollectionViewDelegate {
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: getCompositionalLayout())
     
-    var items: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString)), CellItem(data: DataItem(id: UUID().uuidString))]
+    var items: [CellItem] = [CellItem(account: AccountItem()), CellItem()]
     
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     override func viewDidLoad() {
@@ -95,5 +95,6 @@ class BalanceViewController: UIViewController, UICollectionViewDelegate {
     private func nvParameters(){
         navigationItem.title = "Баланс"
     }
+    
     
 }

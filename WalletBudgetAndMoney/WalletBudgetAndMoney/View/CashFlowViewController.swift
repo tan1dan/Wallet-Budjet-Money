@@ -9,8 +9,8 @@ import UIKit
 
 class CashFlowViewController: UIViewController, UICollectionViewDelegate {
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: getCompositionalLayout())
-    
-    var items: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString))]
+    let segmentView = SegmentControlView()
+    var items: [CellItem] = [CellItem()]
     
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
     override func viewDidLoad() {
@@ -19,8 +19,9 @@ class CashFlowViewController: UIViewController, UICollectionViewDelegate {
         collectionViewParameters()
         layoutVC()
         nvParameters()
+        segmentViewParameters()
         collectionView.register(CashFlowCollectionViewCell.self, forCellWithReuseIdentifier: CashFlowCollectionViewCell.id)
-        
+        collectionView.register(BalanceTrendCollectionViewCell.self, forCellWithReuseIdentifier: BalanceTrendCollectionViewCell.id)
         collectionView.delegate = self
         
         let cashFlowCellRegistration = UICollectionView.CellRegistration<CashFlowCollectionViewCell, CellItem> {
@@ -29,11 +30,11 @@ class CashFlowViewController: UIViewController, UICollectionViewDelegate {
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
-            
-            let cell = collectionView.dequeueConfiguredReusableCell(using: cashFlowCellRegistration, for: indexPath, item: itemIdentifier)
-            cell.buttonShowMoreCashFlow.isHidden = true
-            return cell
-            
+
+                let cell = collectionView.dequeueConfiguredReusableCell(using: cashFlowCellRegistration, for: indexPath, item: itemIdentifier)
+                cell.buttonShowMoreCashFlow.isHidden = true
+                cell.selectedIndex = self.segmentView.segmentControl.selectedSegmentIndex
+                return cell
         }
         
         var firstSnapshot = NSDiffableDataSourceSnapshot<Section, CellItem>()
@@ -69,18 +70,49 @@ class CashFlowViewController: UIViewController, UICollectionViewDelegate {
     
     private func layoutVC(){
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        segmentView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(segmentView)
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: segmentView.topAnchor),
+            
+            segmentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            segmentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            segmentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            segmentView.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
     private func nvParameters(){
-        navigationItem.title = "Денежный поток"
+        navigationItem.titleView = {
+            let view = UIView()
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(label)
+            NSLayoutConstraint.activate([
+                label.topAnchor.constraint(equalTo: view.topAnchor),
+                label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            ])
+            label.attributedText = UIView.stringToNSAttributedString(string: "Денежный поток", size: 18, weight: .semibold , color: .black)
+            return view
+        }()
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    private func segmentViewParameters(){
+        segmentView.layer.shadowColor = UIColor.gray.cgColor
+        segmentView.layer.shadowOpacity = 0.5
+        segmentView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        segmentView.layer.shadowRadius = 4
+        segmentView.segmentControlPressed = { [weak self] in
+            self?.collectionView.reloadData()
+        }
     }
 }
     

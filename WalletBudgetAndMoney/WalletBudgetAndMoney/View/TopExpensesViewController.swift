@@ -10,27 +10,33 @@ import UIKit
 class  TopExpensesViewController: UIViewController, UICollectionViewDelegate {
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: getCompositionalLayout())
     
-    var items: [CellItem] = [CellItem(data: DataItem(id: UUID().uuidString))]
-    
+    var items: [CellItem] = [CellItem()]
+    let segmentView = SegmentControlView()
     var dataSource: UICollectionViewDiffableDataSource<Section, CellItem>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         collectionViewParameters()
         layoutVC()
         nvParameters()
-        collectionView.register(TopExpensesCollectionViewCell.self, forCellWithReuseIdentifier: TopExpensesCollectionViewCell.id)
+        segmentViewParameters()
+        segmentView.segmentControlPressed = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+        
+        collectionView.register(AllExpensesCollectionViewCell.self, forCellWithReuseIdentifier: AllExpensesCollectionViewCell.id)
         
         collectionView.delegate = self
-        let topExpensesCellRegistration = UICollectionView.CellRegistration<TopExpensesCollectionViewCell, CellItem> {
+        let topExpensesCellRegistration = UICollectionView.CellRegistration<AllExpensesCollectionViewCell, CellItem> {
             cell, indexPath, itemIdentifier in
-            cell.labelTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Расходы", size: 26, weight: .bold, color: .black)
+            
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
             
             let cell = collectionView.dequeueConfiguredReusableCell(using: topExpensesCellRegistration, for: indexPath, item: itemIdentifier)
-            cell.buttonShowMoreTopExpenses.isHidden = true
+            cell.selectedIndex = self.segmentView.segmentControl.selectedSegmentIndex
             return cell
             
         }
@@ -68,13 +74,19 @@ class  TopExpensesViewController: UIViewController, UICollectionViewDelegate {
     
     private func layoutVC(){
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        segmentView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
-        
+        view.addSubview(segmentView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: segmentView.topAnchor),
+            
+            segmentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            segmentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            segmentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            segmentView.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
@@ -95,4 +107,12 @@ class  TopExpensesViewController: UIViewController, UICollectionViewDelegate {
         }()
         navigationController?.navigationBar.tintColor = .black
     }
+    
+    private func segmentViewParameters(){
+        segmentView.layer.shadowColor = UIColor.gray.cgColor
+        segmentView.layer.shadowOpacity = 0.5
+        segmentView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        segmentView.layer.shadowRadius = 4
+    }
 }
+

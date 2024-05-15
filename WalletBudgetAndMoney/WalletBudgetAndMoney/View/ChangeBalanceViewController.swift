@@ -246,18 +246,20 @@ class ChangeBalanceViewController: UIViewController {
             let staticItem = StaticData.expenses.first(where: {$0.text == data[1].text })
             type = staticItem!.type
             category = .extense
-            account.transactions?.append(Transaction(id: UUID().uuidString, name: data[0].text!, type: type, category: category, date: data[2].date!, amount: amount, restAmount: account.amount ?? 0))
+            account.transactions?.append(Transaction(id: UUID().uuidString, nameOfAccount: data[0].text!, name: data[1].text!, type: type, category: category, date: data[2].date!, amount: amount, restAmount: account.amount ?? 0))
             accounts[indexAccount ?? 0] = account
             Model.shared.accounts = accounts
+            UserDefaultsManager.shared.create(object: Model.shared.accounts, key: UserDefaultsManager.key)
             navigationController?.popViewController(animated: true)
         } else if segmentedControl.selectedSegmentIndex == 1 {
             account.amount = accountAmount + amount
             let staticItem = StaticData.income.first(where: {$0.text == data[1].text })
             type = staticItem!.type
             category = .income
-            account.transactions?.append(Transaction(id: UUID().uuidString, name: data[0].text!, type: type, category: category, date: data[2].date!, amount: amount, restAmount: account.amount ?? 0))
+            account.transactions?.append(Transaction(id: UUID().uuidString, nameOfAccount: data[0].text!  ,name: data[1].text!, type: type, category: category, date: data[2].date!, amount: amount, restAmount: account.amount ?? 0))
             accounts[indexAccount ?? 0] = account
             Model.shared.accounts = accounts
+            UserDefaultsManager.shared.create(object: Model.shared.accounts, key: UserDefaultsManager.key)
             navigationController?.popViewController(animated: true)
         }
         

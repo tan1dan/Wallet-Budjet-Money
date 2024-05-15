@@ -1,10 +1,3 @@
-//
-//  ComplexeGraphViewController.swift
-//  SwiftGraphKit_Example
-//
-//  Created by Charles Bessonnet on 22/12/2018.
-//  Copyright © 2018 CocoaPods. All rights reserved.
-//
 
 import UIKit
 import SwiftGraphKit

@@ -128,14 +128,14 @@ class CustomKeyboardViewController: UIViewController {
     let buttonComma: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setAttributedTitle(UIView.stringToNSAttributedString(string: ",", size: 24, weight: .bold, color: .black), for: .normal)
+        button.setAttributedTitle(UIView.stringToNSAttributedString(string: ".", size: 24, weight: .bold, color: .black), for: .normal)
         button.addTarget(nil, action: #selector(buttonTapped), for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor(.black).cgColor
         return button
     }()
     
-    let buttonHeight: CGFloat = 100
+    var buttonHeight: CGFloat = 100
     weak var delegate: CustomKeyboardViewControllerDelegate?
     
     override func viewDidLoad() {

@@ -106,7 +106,8 @@ class SettingsAccountViewController: UIViewController {
     @objc func buttonSaveTapped(){
         let model = Model.shared
         
-        model.accounts.append(AccountItem(id: UUID().uuidString, image: data[2].image!, name: data[0].text!, amount: Double(data[1].text!) ?? (0), currency: data[3].text!, transactions: [Transaction(id: UUID().uuidString, name: "Начальные деньги", type: .income, category: .income, date: Date(), amount: Double(data[1].text!) ?? 0, restAmount: Double(data[1].text!) ?? 0)]))
+        model.accounts.append(AccountItem(id: UUID().uuidString, image: data[2].image!.pngData(), name: data[0].text!, amount: Double(data[1].text!) ?? (0), currency: data[3].text!, transactions: [Transaction(id: UUID().uuidString, nameOfAccount: data[0].text!, name: "Начальные деньги", type: .income, category: .income, date: Date(), amount: Double(data[1].text!) ?? 0, restAmount: Double(data[1].text!) ?? 0)]))
+        UserDefaultsManager.shared.create(object: Model.shared.accounts, key: UserDefaultsManager.key)
         navigationController?.popViewController(animated: true)
     }
 }

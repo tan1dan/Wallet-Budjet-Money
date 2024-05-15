@@ -8,7 +8,7 @@
 import UIKit
 
 class LastRecordsViewController: UIViewController {
-    var data: [CellItem] = []
+    var data: [Transaction] = []
     
     let tableView = UITableView()
     
@@ -16,12 +16,13 @@ class LastRecordsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         nvParameters()
-        //Example
-        for _ in 1...16 {
-            data.append(CellItem(data: DataItem(id: UUID().uuidString)))
+        var transactions: [Transaction] = []
+        let accounts = Model.shared.accounts
+        for account in accounts {
+            transactions += account.transactions ?? []
         }
-        
-        //
+        transactions.sort(by: {$0.date > $1.date})
+        data = transactions
         layoutLastRecords()
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,8 +33,6 @@ class LastRecordsViewController: UIViewController {
     private func layoutLastRecords(){
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        
-        
         NSLayoutConstraint.activate([
             
             
@@ -66,29 +65,30 @@ class LastRecordsViewController: UIViewController {
 
 extension LastRecordsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LastRecordsTableViewCell.id, for: indexPath) as! LastRecordsTableViewCell
         cell.selectionStyle = .none
+        var color = UIColor()
+        if data[indexPath.row].category == .extense {
+            cell.imageViewRecords.image = UIImage(resource: .expenses)
+            
+            color = .systemRed
+        } else {
+            cell.imageViewRecords.image = UIImage(resource: .income)
+            
+            color = .systemGreen
+        }
+        cell.labelCategoryLastRecords.text = data[indexPath.row].name
+        let amountRounding = Double(round(100 * data[indexPath.row].amount) / 100)
+        cell.labelAmountLastRecords.attributedText = UIView.stringToNSAttributedString(string: "\(amountRounding) zł", size: 17, weight: .bold, color: color)
+        cell.labelDateLastRecords.attributedText = UIView.stringToNSAttributedString(string: data[indexPath.row].date.formatted(date: .omitted, time: .omitted), size: 14, weight: .semibold, color: .gray)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        4
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        40
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        HeaderView()
-    }
-    
 }

@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
         snapshot.appendItems(dataItems, toSection: .second)
         dataSource.apply(snapshot, animatingDifferences: true)
         collectionView.reloadData()
+        collectionView.reloadInputViews()
     }
     
     override func viewDidLoad() {
@@ -47,17 +48,19 @@ class MainViewController: UIViewController {
         collectionView.register(AccountsCollectionViewCell.self, forCellWithReuseIdentifier: AccountsCollectionViewCell.id)
         collectionView.register(AccountsAddCollectionViewCell.self, forCellWithReuseIdentifier: AccountsAddCollectionViewCell.id)
         
-        collectionView.register(BalanceTrendCollectionViewCell.self, forCellWithReuseIdentifier: BalanceTrendCollectionViewCell.id)
         collectionView.register(LastRecordsCollectionViewCell.self, forCellWithReuseIdentifier: LastRecordsCollectionViewCell.id)
         collectionView.register(CashFlowCollectionViewCell.self, forCellWithReuseIdentifier: CashFlowCollectionViewCell.id)
         collectionView.register(TopExpensesCollectionViewCell.self, forCellWithReuseIdentifier: TopExpensesCollectionViewCell.id)
         
-        collectionView.delegate = self
+        
         
         let accountsCellRegistration = UICollectionView.CellRegistration<AccountsCollectionViewCell, CellItem> {
             cell, indexPath, itemIdentifier in
             cell.labelAccountType.attributedText = UIView.stringToNSAttributedString(string: itemIdentifier.account?.name ?? "", size: 20, weight: .regular, color: .gray)
-            cell.labelAmount.attributedText = UIView.stringToNSAttributedString(string: String(itemIdentifier.account?.amount ?? 0), size: 24, weight: .bold, color: .black)
+            
+            let amountRounding = Double(round(100 * (itemIdentifier.account?.amount ?? 0)) / 100)
+            
+            cell.labelAmount.attributedText = UIView.stringToNSAttributedString(string: String(amountRounding), size: 24, weight: .bold, color: .black)
             cell.labelCurrency.attributedText = UIView.stringToNSAttributedString(string: itemIdentifier.account?.currency ?? "", size: 22, weight: .light, color: .black)
         }
         
@@ -70,19 +73,20 @@ class MainViewController: UIViewController {
             }
         }
         
-        let balanceTrendCellRegistration = UICollectionView.CellRegistration<BalanceTrendCollectionViewCell, CellItem> {
-            cell, IndexPath, itemIdentifier in
-            
-            cell.buttonShowMorePressed = { [weak self] in
-                let vc = BalanceViewController()
-                self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
-                self?.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: false)
-            }
-        }
-        
         let lastRecordsCellRegistration = UICollectionView.CellRegistration<LastRecordsCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
-            cell.data = self.dataItems
+            var transactions: [Transaction] = []
+            if itemIdentifier.data?.transactions.count ?? 0 >= 3 {
+                for i in 0...2 {
+                    transactions.append((itemIdentifier.data?.transactions[i])!)
+                }
+            } else {
+                for i in 0...(itemIdentifier.data?.transactions.count ?? 0) - 1 {
+                    transactions.append((itemIdentifier.data?.transactions[i])!)
+                }
+            }
+            cell.data = transactions.reversed()
+            
             cell.buttonShowMorePressed = { [weak self] in
                 let vc = LastRecordsViewController()
                 self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
@@ -92,7 +96,7 @@ class MainViewController: UIViewController {
         
         let cashFlowCellRegistration = UICollectionView.CellRegistration<CashFlowCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
-            cell.data = self.dataItems
+            
             cell.buttonShowMorePressed = { [weak self] in
                 let vc = CashFlowViewController()
                 self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
@@ -102,7 +106,7 @@ class MainViewController: UIViewController {
         
         let topExpensesCellRegistration = UICollectionView.CellRegistration<TopExpensesCollectionViewCell, CellItem> {
             cell, IndexPath, itemIdentifier in
-            cell.data = self.dataItems
+            
             cell.buttonShowMorePressed = { [weak self] in
                 let vc = TopExpensesViewController()
                 self?.tabBarController?.navigationController?.pushViewController(vc, animated: true)
@@ -122,12 +126,9 @@ class MainViewController: UIViewController {
                 }
             } else {
                 if indexPath.row == 0 {
-                    let cell = collectionView.dequeueConfiguredReusableCell(using: balanceTrendCellRegistration, for: indexPath, item: itemIdentifier)
-                    return cell
-                } else if indexPath.row == 1 {
                     let cell = collectionView.dequeueConfiguredReusableCell(using: lastRecordsCellRegistration, for: indexPath, item: itemIdentifier)
                     return cell
-                } else if indexPath.row == 2 {
+                } else if indexPath.row == 1 {
                     let cell = collectionView.dequeueConfiguredReusableCell(using: cashFlowCellRegistration, for: indexPath, item: itemIdentifier)
                     return cell
                 } else {
@@ -159,18 +160,19 @@ class MainViewController: UIViewController {
     private func updateDataItems() -> [CellItem] {
         var transactions: [Transaction] = []
         var dataItems: [CellItem] = []
-        var accounts = Model.shared.accounts
+        let accounts = Model.shared.accounts
         for item in accounts {
             transactions += item.transactions!
         }
         transactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30})
-        for  i in 0...3 {
+        for _ in 0...2 {
             dataItems.append(CellItem(data: DataItem(id: UUID().uuidString, transactions: transactions)))
         }
+        transactions.sort(by: {$0.date > $1.date})
         return dataItems
     }
     
-    func layoutVC(){
+    private func layoutVC(){
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
@@ -227,9 +229,5 @@ class MainViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
     }
-    
 }
 
-extension MainViewController: UICollectionViewDelegate {
-    
-}
