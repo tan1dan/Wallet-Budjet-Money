@@ -136,13 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B0D51FC3C096A8EBFE61A746 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		F7365F5B2BE2B2AA006A0A9B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +167,6 @@
 			children = (
 				F76A0AE22BD1A2EF008E761B /* WalletBudgetAndMoney */,
 				F76A0AE12BD1A2EF008E761B /* Products */,
-				B0D51FC3C096A8EBFE61A746 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
