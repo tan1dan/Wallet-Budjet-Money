@@ -21,7 +21,6 @@ class CashFlowViewController: UIViewController, UICollectionViewDelegate {
         nvParameters()
         segmentViewParameters()
         collectionView.register(CashFlowCollectionViewCell.self, forCellWithReuseIdentifier: CashFlowCollectionViewCell.id)
-        collectionView.register(BalanceTrendCollectionViewCell.self, forCellWithReuseIdentifier: BalanceTrendCollectionViewCell.id)
         collectionView.delegate = self
         
         let cashFlowCellRegistration = UICollectionView.CellRegistration<CashFlowCollectionViewCell, CellItem> {
