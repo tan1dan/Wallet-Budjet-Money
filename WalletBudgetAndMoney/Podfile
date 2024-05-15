@@ -6,7 +6,7 @@ target 'WalletBudgetAndMoney' do
   use_frameworks!
 
   # Pods for WalletBudgetAndMoney
-  
+  pod 'SwiftGraphKit'
   
   target 'WalletBudgetAndMoneyTests' do
     inherit! :search_paths
