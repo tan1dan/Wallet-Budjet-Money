@@ -587,7 +587,7 @@ struct SubTypes: Hashable {
     var income: IncomeSubtypes?
 }
 
-enum Types: Hashable {
+enum Types: String, Codable, Hashable {
     case foodAndDrinks
     case buys
     case house

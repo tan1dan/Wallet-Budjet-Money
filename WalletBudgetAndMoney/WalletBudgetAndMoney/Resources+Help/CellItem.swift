@@ -12,21 +12,20 @@ struct CellItem: Hashable {
     var data: DataItem?
 }
 
-struct AccountItem: Hashable {
+struct AccountItem: Codable, Hashable {
     var id: String?
-    var image: UIImage?
+    var image: Data?
     var name: String?
     var amount: Double?
     var currency: String?
     var transactions: [Transaction]?
 }
 
-struct Transaction: Hashable {
+struct Transaction: Codable, Hashable {
     var id: String
-//    var account: AccountItem
+    var nameOfAccount: String
     var name: String
     var type: Types
-//    var subType: SubTypes
     var category: Category
     var date: Date
     var amount: Double
@@ -56,7 +55,15 @@ struct AccountTypeItem: Hashable {
     var image: UIImage?
 }
 
-enum Category: Hashable {
+struct ExpenseItem: Hashable {
+    var id: String
+    var text: String
+    var type: Types
+    var color: UIColor
+    var amount: Double
+}
+
+enum Category: String, Codable, Hashable {
     case income
     case extense
 }
@@ -67,4 +74,10 @@ enum Time {
     case threeMonth
     case halfYear
     case year
+}
+
+struct StatisticsItem: Hashable {
+    var id: String
+    var text: String
+    var amount: Double
 }
