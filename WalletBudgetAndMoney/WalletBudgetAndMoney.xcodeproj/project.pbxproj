@@ -156,6 +156,7 @@
 		F7365F5C2BE2B2D0006A0A9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F7365F5B2BE2B2AA006A0A9B /* Cells */,
 				F76A0B3E2BDC6D60008E761B /* HeaderView.swift */,
 				F7DE96782BF27A1E00AF7373 /* SegmentControlView.swift */,
 			);
@@ -186,7 +187,8 @@
 				F76A0AE32BD1A2EF008E761B /* AppDelegate.swift */,
 				F76A0AE52BD1A2EF008E761B /* SceneDelegate.swift */,
 				F76A0B402BDD442A008E761B /* Model */,
-				F76A0B412BDD443D008E761B /* View */,
+				F7365F5C2BE2B2D0006A0A9B /* Views */,
+				F76A0B412BDD443D008E761B /* Controllers */,
 				F76A0B432BDD4474008E761B /* Resources+Help */,
 				F76A0AE92BD1A2EF008E761B /* Main.storyboard */,
 				F76A0AEC2BD1A2F0008E761B /* Assets.xcassets */,
@@ -205,7 +207,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F76A0B412BDD443D008E761B /* View */ = {
+		F76A0B412BDD443D008E761B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				F76A0AE72BD1A2EF008E761B /* MainViewController.swift */,
@@ -224,10 +226,8 @@
 				F7BD1DC42BE8B679007CEA09 /* CustomKeyboardViewController.swift */,
 				F784DC7F2BE96A310074B855 /* ChooseAccountViewController.swift */,
 				F7DE967C2BF3DB6600AF7373 /* SetFirtstMoneyViewController.swift */,
-				F7365F5C2BE2B2D0006A0A9B /* Views */,
-				F7365F5B2BE2B2AA006A0A9B /* Cells */,
 			);
-			path = View;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		F76A0B432BDD4474008E761B /* Resources+Help */ = {
