@@ -20,16 +20,10 @@ class LastRecordsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutCell()
-        //Example
-        imageViewRecords.image = UIImage(resource: .transactions)
+
         imageViewRecords.layer.cornerRadius = 20
         imageViewRecords.layer.masksToBounds = true
-        labelCategoryLastRecords.text = "Перевести, снять"
         labelCategoryLastRecords.numberOfLines = 0
-        labelDescriptionLastRecords.attributedText = UIView.stringToNSAttributedString(string: "Наличные -> Santander", size: 14, weight: .bold, color: .gray)
-        labelAmountLastRecords.attributedText = UIView.stringToNSAttributedString(string: "1112.00", size: 17, weight: .bold, color: .systemGreen)
-        labelDateLastRecords.attributedText = UIView.stringToNSAttributedString(string: "18.04.2024", size: 14, weight: .semibold, color: .gray)
-        //
     }
     
     private func layoutCell(){

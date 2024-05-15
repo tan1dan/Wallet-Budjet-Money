@@ -1,13 +1,13 @@
 //
-//  TopExpensesCollectionViewCell.swift
-//  WalletBudget&Money
+//  AllExpensesCollectionViewCell.swift
+//  WalletBudgetAndMoney
 //
-//  Created by Иван Знак on 25/04/2024.
+//  Created by Иван Знак on 13/05/2024.
 //
 
 import UIKit
 
-class TopExpensesCollectionViewCell: UICollectionViewCell {
+class AllExpensesCollectionViewCell: UICollectionViewCell {
     
     let labelTopExpenses = UILabel()
     var stackViewTopExpenses = UIStackView()
@@ -18,8 +18,9 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
     var buttonShowMorePressed: (() -> Void)?
     var expenseItems: [ExpenseItem] = []
     var time: Time = .month
-    var isAllExpenses = false
-    static let id = "TopExpensesCollectionViewCell"
+    var isAllExpenses = true
+    var selectedIndex = 1
+    static let id = "AllExpensesCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,6 +41,7 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
         
         labelTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Топ расходов", size: 26, weight: .bold, color: .black)
         labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray)
+        buttonShowMoreTopExpenses.isHidden = true
     }
     
     
@@ -49,7 +51,24 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        if selectedIndex == 0 {
+            time = .week
+            labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текая неделя", size: 17, weight: .regular, color: .gray)
+        } else if selectedIndex == 1 {
+            time = .month
+            labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray)
+        } else if selectedIndex == 2 {
+            time = .threeMonth
+            labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущие 3 месяца", size: 17, weight: .regular, color: .gray)
+        } else if selectedIndex == 3 {
+            time = .halfYear
+            labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущие полгода", size: 17, weight: .regular, color: .gray)
+        } else {
+            time = .year
+            labelDateTopExpenses.attributedText = UIView.stringToNSAttributedString(string: "Текущий год", size: 17, weight: .regular, color: .gray)
+        }
         updateLayoutTopExpenses()
+        
     }
     
     private func updateLayoutTopExpenses(){
@@ -343,3 +362,4 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
     }
     
 }
+

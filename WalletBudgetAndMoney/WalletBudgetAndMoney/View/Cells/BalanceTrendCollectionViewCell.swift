@@ -18,7 +18,10 @@ class BalanceTrendCollectionViewCell: UICollectionViewCell {
     let labelAmountBalanceTrend = UILabel()
     let buttonShowMoreBalanceTrend = UIButton()
     var buttonShowMorePressed: (() -> Void)?
-    var data: [CellItem] = []
+    var selectedIndex: Int = 1
+    var time: Time = .month
+    
+    var data: [Transaction] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +38,57 @@ class BalanceTrendCollectionViewCell: UICollectionViewCell {
         labelBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Денежный поток", size: 26, weight: .bold, color: .black)
         labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
         )
-        labelAmountBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "-20.00 zł", size: 35, weight: .bold, color: .black)
+        
+        data = []
+        for account in Model.shared.accounts {
+            data += account.transactions ?? []
+        }
+        
+        switch time {
+        case .week:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущая неделя", size: 17, weight: .regular, color: .gray
+            )
+        case .month:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
+            )
+        case .threeMonth:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущие 3 месяца", size: 17, weight: .regular, color: .gray
+            )
+        case .halfYear:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущие полгода", size: 17, weight: .regular, color: .gray
+            )
+        case .year:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущий год", size: 17, weight: .regular, color: .gray
+            )
+        }
+        
+        var incomeAmount: Double = 0
+        var expenseAmount: Double = 0
+        let incomes = data.filter({ $0.category == .income })
+        let expenses = data.filter({$0.category == .extense})
+        
+        for item in incomes {
+            incomeAmount += item.amount
+        }
+        
+        for item in expenses {
+            expenseAmount += item.amount
+        }
+        
+        var amount: Double = 0
+        if incomeAmount >= expenseAmount {
+            amount = incomeAmount - expenseAmount
+        } else {
+            amount = expenseAmount - incomeAmount
+        }
+        
+        let amountRounding = Double(round(100 * amount) / 100)
+        labelAmountBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "\(amountRounding) zł", size: 35, weight: .bold, color: .black)
         buttonShowMoreBalanceTrendParameters()
         
     }
@@ -92,6 +145,71 @@ class BalanceTrendCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        if selectedIndex == 0 {
+            time = .week
+        } else if selectedIndex == 1 {
+            time = .month
+        } else if selectedIndex == 2 {
+            time = .threeMonth
+        } else if selectedIndex == 3 {
+            time = .halfYear
+        } else {
+            time = .year
+        }
+        graph.model.time = time
+        updateData()
         graph.model.updateData()
+    }
+    
+    private func updateData(){
+        data = []
+        for account in Model.shared.accounts {
+            data += account.transactions ?? []
+        }
+        
+        switch time {
+        case .week:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущая неделя", size: 17, weight: .regular, color: .gray
+            )
+        case .month:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущий месяц", size: 17, weight: .regular, color: .gray
+            )
+        case .threeMonth:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущие 3 месяца", size: 17, weight: .regular, color: .gray
+            )
+        case .halfYear:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущие полгода", size: 17, weight: .regular, color: .gray
+            )
+        case .year:
+            data = data.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 })
+            labelDateBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "Текущий год", size: 17, weight: .regular, color: .gray
+            )
+        }
+        
+        var incomeAmount: Double = 0
+        var expenseAmount: Double = 0
+        let incomes = data.filter({ $0.category == .income })
+        let expenses = data.filter({$0.category == .extense})
+        
+        for item in incomes {
+            incomeAmount += item.amount
+        }
+        
+        for item in expenses {
+            expenseAmount += item.amount
+        }
+        
+        var amount: Double = 0
+        if incomeAmount >= expenseAmount {
+            amount = incomeAmount - expenseAmount
+        } else {
+            amount = expenseAmount - incomeAmount
+        }
+        let amountRounding = Double(round(100 * amount) / 100)
+        labelAmountBalanceTrend.attributedText = UIView.stringToNSAttributedString(string: "\(amountRounding) zł", size: 35, weight: .bold, color: .black)
     }
 }

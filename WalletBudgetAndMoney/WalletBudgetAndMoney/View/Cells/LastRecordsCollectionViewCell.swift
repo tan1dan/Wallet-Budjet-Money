@@ -13,7 +13,7 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
     let labelLastRecords = UILabel()
     let buttonShowMoreLastRecords = UIButton()
 
-    var data: [CellItem] = []
+    var data: [Transaction] = []
     var buttonShowMorePressed: (() -> Void)?
     
     static let id = "LastRecordsCollectionViewCell"
@@ -68,6 +68,26 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
         buttonShowMoreLastRecords.addTarget(nil, action: #selector(buttonShowMoreAction), for: .touchUpInside)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        var transactions: [Transaction] = []
+        let accounts = Model.shared.accounts
+        for account in accounts {
+            transactions += account.transactions ?? []
+        }
+        transactions.sort(by: {$0.date > $1.date})
+        var endedTransactions: [Transaction] = []
+        if transactions.count >= 3 {
+            for i in 0...2 {
+                endedTransactions.append(transactions[i])
+            }
+        } else {
+            endedTransactions = transactions
+        }
+        data = endedTransactions
+        tableViewLastRecords.reloadData()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -81,12 +101,26 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
 extension LastRecordsCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LastRecordsTableViewCell.id, for: indexPath) as! LastRecordsTableViewCell
         cell.selectionStyle = .none
+        var color = UIColor()
+        if data[indexPath.row].category == .extense {
+            cell.imageViewRecords.image = UIImage(resource: .expenses)
+            
+            color = .systemRed
+        } else {
+            cell.imageViewRecords.image = UIImage(resource: .income)
+            
+            color = .systemGreen
+        }
+        cell.labelCategoryLastRecords.text = data[indexPath.row].name
+        let amountRounding = Double(round(100 * data[indexPath.row].amount) / 100)
+        cell.labelAmountLastRecords.attributedText = UIView.stringToNSAttributedString(string: "\(amountRounding) zł", size: 17, weight: .bold, color: color)
+        cell.labelDateLastRecords.attributedText = UIView.stringToNSAttributedString(string: data[indexPath.row].date.formatted(date: .omitted, time: .omitted), size: 14, weight: .semibold, color: .gray)
         return cell
     }
     
