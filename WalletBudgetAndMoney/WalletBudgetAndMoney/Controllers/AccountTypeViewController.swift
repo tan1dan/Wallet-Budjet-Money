@@ -25,6 +25,9 @@ class AccountTypeViewController: UIViewController {
         tableView.register(ChangeBalanceTableViewCell.self, forCellReuseIdentifier: ChangeBalanceTableViewCell.id)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorColor = .systemGray2
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         nvParameters()
     }
     

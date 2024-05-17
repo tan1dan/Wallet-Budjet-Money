@@ -31,12 +31,12 @@ class ChangeBalanceTableViewCell: UITableViewCell {
         return label
     }()
     
-    let separator: UIView = {
-        let separator = UIView()
-        separator.translatesAutoresizingMaskIntoConstraints = false
-        separator.backgroundColor = .gray
-        return separator
-    }()
+//    let separator: UIView = {
+//        let separator = UIView()
+//        separator.translatesAutoresizingMaskIntoConstraints = false
+//        separator.backgroundColor = .gray
+//        return separator
+//    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -52,14 +52,14 @@ class ChangeBalanceTableViewCell: UITableViewCell {
         contentView.addSubview(imageViewCategory)
         contentView.addSubview(labelCategory)
         contentView.addSubview(labelSelect)
-        contentView.addSubview(separator)
+//        contentView.addSubview(separator)
         
-        NSLayoutConstraint.activate([
-            separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            separator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            separator.heightAnchor.constraint(equalToConstant: 0.5),
-        ])
+//        NSLayoutConstraint.activate([
+//            separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+//            separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+//            separator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+//            separator.heightAnchor.constraint(equalToConstant: 0.5),
+//        ])
         
         
         NSLayoutConstraint.activate([

@@ -25,6 +25,9 @@ class ChooseAccountViewController: UIViewController {
         tableView.register(ChangeBalanceTableViewCell.self, forCellReuseIdentifier: ChangeBalanceTableViewCell.id)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorColor = .systemGray2
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         nvParameters()
     }
     
@@ -67,7 +70,7 @@ extension ChooseAccountViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChangeBalanceTableViewCell.id, for: indexPath) as! ChangeBalanceTableViewCell
         cell.selectionStyle = .none
-        cell.imageViewCategory.image = UIImage(data: data[indexPath.row].image!) 
+        cell.imageViewCategory.image = UIImage(data: data[indexPath.row].image!)
         cell.imageViewCategory.layer.cornerRadius = 0
         cell.labelCategory.text = data[indexPath.row].name
         return cell
