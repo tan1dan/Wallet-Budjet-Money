@@ -49,6 +49,9 @@ class SettingsAccountViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ChangeBalanceTableViewCell.self, forCellReuseIdentifier: ChangeBalanceTableViewCell.id)
+        tableView.separatorColor = .systemGray2
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         nvParameters()
         layoutConstraints()
     }

@@ -8,26 +8,26 @@
 import Foundation
 
 class UserDefaultsManager {
-    public static let shared = UserDefaultsManager()
+    static let shared = UserDefaultsManager()
     private init() {}
-    private let userDefualts = UserDefaults.standard
+    private let userDefaults = UserDefaults.standard
     static let key: String = "Accounts"
     
     
     func create(object: [AccountItem], key: String){
-        userDefualts.setAccountItems(object, forKey: key)
+        userDefaults.setAccountItems(object, forKey: key)
     }
     
     func read(key: String) -> [AccountItem]? {
-        userDefualts.accountItems(forKey: key)
+        userDefaults.accountItems(forKey: key)
     }
     
     func update<T>(object: T, key: String){
-        userDefualts.setValue(object, forKey: key)
+        userDefaults.set(object, forKey: key)
     }
     
     func delete(key: String){
-        userDefualts.removeObject(forKey: key)
+        userDefaults.removeObject(forKey: key)
     }
     
     

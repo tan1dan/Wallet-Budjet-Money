@@ -87,7 +87,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 })
+                .filter({$0.category == .extense})
             for transaction in filteredTransactions {
                 expenses += transaction.amount
             }
@@ -100,7 +101,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 })
+                .filter({$0.category == .extense})
             for transaction in filteredTransactions {
                 expenses += transaction.amount
             }
@@ -113,7 +115,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 })
+                .filter({$0.category == .extense})
             for transaction in filteredTransactions {
                 expenses += transaction.amount
             }
@@ -126,7 +129,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 })
+                .filter({$0.category == .extense})
             for transaction in filteredTransactions {
                 expenses += transaction.amount
             }
@@ -139,7 +143,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 })
+                .filter({$0.category == .extense})
             for transaction in filteredTransactions {
                 expenses += transaction.amount
             }
@@ -156,7 +161,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 }).filter({$0.category == .income})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 })
+                .filter({$0.category == .income})
             for transaction in filteredTransactions {
                 incomes += transaction.amount
             }
@@ -168,7 +174,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 }).filter({$0.category == .income})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 })
+                .filter({$0.category == .income})
             for transaction in filteredTransactions {
                 incomes += transaction.amount
             }
@@ -180,7 +187,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 }).filter({$0.category == .income})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 })
+                .filter({$0.category == .income})
             for transaction in filteredTransactions {
                 incomes += transaction.amount
             }
@@ -192,7 +200,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 }).filter({$0.category == .income})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 })
+                .filter({$0.category == .income})
             for transaction in filteredTransactions {
                 incomes += transaction.amount
             }
@@ -204,7 +213,8 @@ class StatisticsViewController: UIViewController, UICollectionViewDelegate {
                 transactions += account.transactions!
             }
             transactions.sort(by: {$0.date > $1.date})
-            var filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 }).filter({$0.category == .income})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 })
+                .filter({$0.category == .income})
             for transaction in filteredTransactions {
                 incomes += transaction.amount
             }

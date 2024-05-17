@@ -28,7 +28,7 @@ class FirstBalanceViewController: UIViewController {
     }()
     
     
-    var labeTextHeight: CGFloat = 70
+    var labelTextHeight: CGFloat = 70
     var closure: ((String) -> ())?
     
     
@@ -81,10 +81,6 @@ class FirstBalanceViewController: UIViewController {
         ])
     }
     
-    func keyboardParameters(){
-        addChild(customKeyboard)
-    }
-    
     @objc func labelAmountTapped(){
         view.addSubview(customKeyboard.view)
         customKeyboard.view.translatesAutoresizingMaskIntoConstraints = false
@@ -119,16 +115,16 @@ extension FirstBalanceViewController: CustomKeyboardViewControllerDelegate {
             case "<":
                 if amountLabel.text?.count ?? 0 >= 2{
                     amountLabel.text?.removeLast()
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text!, size: labeTextHeight, weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text!, size: labelTextHeight, weight: .semibold, color: .white)
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: "0", size: labeTextHeight, weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: "0", size: labelTextHeight, weight: .semibold, color: .white)
                 }
             case ",":
                 guard amountLabel.text?.count ?? 0 < 9 else {return}
                 if amountLabel.text?.contains(",") ?? true {
                     return
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
                     
             case "0":
@@ -136,21 +132,21 @@ extension FirstBalanceViewController: CustomKeyboardViewControllerDelegate {
                 if amountLabel.text! == "0" {
                     return
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
             default:
                 guard amountLabel.text?.count ?? 0 < 9 else {return}
                 if amountLabel.text! == "0" {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: text, size: labelTextHeight , weight: .semibold, color: .white)
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
             }
             
             if amountLabel.text?.count ?? 0 >= 8 {
-                labeTextHeight = 65
+                labelTextHeight = 65
             } else {
-                labeTextHeight = 70
+                labelTextHeight = 70
             }
         
     }

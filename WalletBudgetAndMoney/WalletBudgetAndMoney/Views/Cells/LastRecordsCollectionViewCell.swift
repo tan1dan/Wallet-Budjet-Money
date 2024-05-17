@@ -32,6 +32,9 @@ class LastRecordsCollectionViewCell: UICollectionViewCell {
         tableViewLastRecords.delegate = self
         tableViewLastRecords.showsVerticalScrollIndicator = false
         tableViewLastRecords.register(LastRecordsTableViewCell.self, forCellReuseIdentifier: LastRecordsTableViewCell.id)
+        tableViewLastRecords.separatorColor = .systemGray2
+        tableViewLastRecords.separatorStyle = .singleLine
+        tableViewLastRecords.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         labelLastRecords.attributedText = UIView.stringToNSAttributedString(string: "Последние записи", size: 26, weight: .bold, color: .black)
         buttonShowMoreLastRecordsParameters()

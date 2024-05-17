@@ -60,7 +60,7 @@ class TabBarController: UITabBarController {
 
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if tabBarController.viewControllers?[1] == viewController {
+        if tabBarController.viewControllers?[1] === viewController {
             navigationController?.pushViewController(ChangeBalanceViewController(), animated: false)
             navigationController?.setNavigationBarHidden(false, animated: false)
             return false

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetFirtstMoneyViewController: UIViewController {
+class SetFirstMoneyViewController: UIViewController {
     
     let customKeyboard = CustomKeyboardViewController()
     
@@ -72,7 +72,7 @@ class SetFirtstMoneyViewController: UIViewController {
         return label
     }()
     
-    var labeTextHeight: CGFloat = 70
+    var labelTextHeight: CGFloat = 70
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,10 +162,6 @@ class SetFirtstMoneyViewController: UIViewController {
         ])
     }
     
-    func keyboardParameters(){
-        addChild(customKeyboard)
-    }
-    
     @objc func labelAmountTapped(){
         view.addSubview(customKeyboard.view)
         customKeyboard.view.translatesAutoresizingMaskIntoConstraints = false
@@ -192,7 +188,7 @@ class SetFirtstMoneyViewController: UIViewController {
     }
 }
 
-extension SetFirtstMoneyViewController: CustomKeyboardViewControllerDelegate {
+extension SetFirstMoneyViewController: CustomKeyboardViewControllerDelegate {
     func buttonPressed(sender: CustomKeyboardViewController, button: UIButton) {
        
             guard let text = button.titleLabel?.text else {return}
@@ -200,16 +196,16 @@ extension SetFirtstMoneyViewController: CustomKeyboardViewControllerDelegate {
             case "<":
                 if amountLabel.text?.count ?? 0 >= 2{
                     amountLabel.text?.removeLast()
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text!, size: labeTextHeight, weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text!, size: labelTextHeight, weight: .semibold, color: .white)
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: "0", size: labeTextHeight, weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: "0", size: labelTextHeight, weight: .semibold, color: .white)
                 }
             case ",":
                 guard amountLabel.text?.count ?? 0 < 9 else {return}
                 if amountLabel.text?.contains(",") ?? true {
                     return
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
                     
             case "0":
@@ -217,21 +213,21 @@ extension SetFirtstMoneyViewController: CustomKeyboardViewControllerDelegate {
                 if amountLabel.text! == "0" {
                     return
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
             default:
                 guard amountLabel.text?.count ?? 0 < 9 else {return}
                 if amountLabel.text! == "0" {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: text, size: labelTextHeight , weight: .semibold, color: .white)
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
             }
             
             if amountLabel.text?.count ?? 0 >= 6 {
-                labeTextHeight = 45
+                labelTextHeight = 45
             } else {
-                labeTextHeight = 70
+                labelTextHeight = 70
             }
         
     }

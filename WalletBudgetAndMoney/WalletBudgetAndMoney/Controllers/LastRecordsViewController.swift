@@ -28,6 +28,9 @@ class LastRecordsViewController: UIViewController {
         tableView.delegate = self
         tableView.showsVerticalScrollIndicator = false
         tableView.register(LastRecordsTableViewCell.self, forCellReuseIdentifier: LastRecordsTableViewCell.id)
+        tableView.separatorColor = .systemGray2
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     private func layoutLastRecords(){

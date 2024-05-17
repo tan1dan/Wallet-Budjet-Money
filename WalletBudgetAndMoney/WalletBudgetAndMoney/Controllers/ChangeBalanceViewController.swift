@@ -84,7 +84,7 @@ class ChangeBalanceViewController: UIViewController {
         return view
     }()
     
-    var labeTextHeight: CGFloat = 70
+    var labelTextHeight: CGFloat = 70
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +95,9 @@ class ChangeBalanceViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(ChangeBalanceTableViewCell.self, forCellReuseIdentifier: ChangeBalanceTableViewCell.id)
         tableView.register(ChangeBalanceDateTableViewCell.self, forCellReuseIdentifier: ChangeBalanceDateTableViewCell.id)
+        tableView.separatorColor = .systemGray2
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         amountLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(labelAmountTapped)))
         customKeyboard.delegate = self
     }
@@ -185,10 +188,6 @@ class ChangeBalanceViewController: UIViewController {
         ])
     }
     
-    func keyboardParameters(){
-        addChild(customKeyboard)
-    }
-    
     @objc func labelAmountTapped(){
         if customKeyboard.isKeyboardVisible == false {
             view.addSubview(customKeyboard.view)
@@ -226,7 +225,7 @@ class ChangeBalanceViewController: UIViewController {
         
         var accounts = Model.shared.accounts
         let indexAccount = accounts.firstIndex(where: {$0.name == data[0].text})
-        var account = accounts.first(where: {$0.name == data[0].text})
+        let account = accounts.first(where: {$0.name == data[0].text})
         guard var account = account else {return}
         guard let accountAmount = account.amount else {return}
         guard let amount = Double(amountLabel.text!) else {return}
@@ -360,6 +359,21 @@ extension ChangeBalanceViewController: UITableViewDelegate, UITableViewDataSourc
             navigationController?.setNavigationBarHidden(false, animated: false)
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if customKeyboard.isKeyboardVisible == true {
+            customKeyboard.view.removeFromSuperview()
+            NSLayoutConstraint.deactivate([
+                customKeyboard.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                customKeyboard.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                customKeyboard.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                customKeyboard.view.heightAnchor.constraint(equalToConstant: customKeyboard.buttonHeight * 4)
+            ])
+            
+            customKeyboard.isKeyboardVisible.toggle()
+        }
+    }
+    
 }
 
 extension ChangeBalanceViewController: CustomKeyboardViewControllerDelegate {
@@ -370,16 +384,16 @@ extension ChangeBalanceViewController: CustomKeyboardViewControllerDelegate {
             case "<":
                 if amountLabel.text?.count ?? 0 >= 2{
                     amountLabel.text?.removeLast()
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text!, size: labeTextHeight, weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text!, size: labelTextHeight, weight: .semibold, color: .white)
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: "0", size: labeTextHeight, weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: "0", size: labelTextHeight, weight: .semibold, color: .white)
                 }
             case ",":
                 guard amountLabel.text?.count ?? 0 < 9 else {return}
                 if amountLabel.text?.contains(",") ?? true {
                     return
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
                     
             case "0":
@@ -387,21 +401,21 @@ extension ChangeBalanceViewController: CustomKeyboardViewControllerDelegate {
                 if amountLabel.text! == "0" {
                     return
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
             default:
                 guard amountLabel.text?.count ?? 0 < 9 else {return}
                 if amountLabel.text! == "0" {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: text, size: labelTextHeight , weight: .semibold, color: .white)
                 } else {
-                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labeTextHeight , weight: .semibold, color: .white)
+                    amountLabel.attributedText = UIView.stringToNSAttributedString(string: amountLabel.text! + text, size: labelTextHeight , weight: .semibold, color: .white)
                 }
             }
             
             if amountLabel.text?.count ?? 0 >= 6 {
-                labeTextHeight = 45
+                labelTextHeight = 45
             } else {
-                labeTextHeight = 70
+                labelTextHeight = 70
             }
         
     }
