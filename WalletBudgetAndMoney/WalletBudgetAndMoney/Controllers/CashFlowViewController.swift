@@ -23,17 +23,12 @@ class CashFlowViewController: UIViewController, UICollectionViewDelegate {
         collectionView.register(CashFlowCollectionViewCell.self, forCellWithReuseIdentifier: CashFlowCollectionViewCell.id)
         collectionView.delegate = self
         
-        let cashFlowCellRegistration = UICollectionView.CellRegistration<CashFlowCollectionViewCell, CellItem> {
-            cell, indexPath, itemIdentifier in
-            
-        }
-        
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
-
-                let cell = collectionView.dequeueConfiguredReusableCell(using: cashFlowCellRegistration, for: indexPath, item: itemIdentifier)
-                cell.buttonShowMoreCashFlow.isHidden = true
-                cell.selectedIndex = self.segmentView.segmentControl.selectedSegmentIndex
-                return cell
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CashFlowCollectionViewCell.id, for: indexPath) as! CashFlowCollectionViewCell
+            cell.buttonShowMoreCashFlow.isHidden = true
+            cell.selectedIndex = self.segmentView.segmentControl.selectedSegmentIndex
+            return cell
         }
         
         var firstSnapshot = NSDiffableDataSourceSnapshot<Section, CellItem>()

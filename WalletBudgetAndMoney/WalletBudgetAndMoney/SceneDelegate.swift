@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var vc = UINavigationController()
         
         if UserDefaultsManager.shared.read(key: UserDefaultsManager.key) == nil {
-            vc = UINavigationController(rootViewController: SetFirtstMoneyViewController())
+            vc = UINavigationController(rootViewController: SetFirstMoneyViewController())
         } else {
             vc = UINavigationController(rootViewController: TabBarController())
         }

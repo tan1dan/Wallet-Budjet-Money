@@ -113,19 +113,24 @@ class TopExpensesCollectionViewCell: UICollectionViewCell {
         
         switch time {
         case .week:
-            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 7 })
+                .filter({$0.category == .extense})
             data = filteredTransactions
         case .month:
-            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 30 })
+                .filter({$0.category == .extense})
             data = filteredTransactions
         case .threeMonth:
-            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 90 })
+                .filter({$0.category == .extense})
             data = filteredTransactions
         case .halfYear:
-            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 180 })
+                .filter({$0.category == .extense})
             data = filteredTransactions
         case .year:
-            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 }).filter({$0.category == .extense})
+            let filteredTransactions = transactions.filter({$0.date <= Date() && $0.date >= Date() - 60 * 60 * 24 * 365 })
+                .filter({$0.category == .extense})
             data = filteredTransactions
         }
         

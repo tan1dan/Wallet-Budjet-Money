@@ -28,14 +28,10 @@ class  TopExpensesViewController: UIViewController, UICollectionViewDelegate {
         collectionView.register(AllExpensesCollectionViewCell.self, forCellWithReuseIdentifier: AllExpensesCollectionViewCell.id)
         
         collectionView.delegate = self
-        let topExpensesCellRegistration = UICollectionView.CellRegistration<AllExpensesCollectionViewCell, CellItem> {
-            cell, indexPath, itemIdentifier in
-            
-        }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: CellItem) -> UICollectionViewCell? in
             
-            let cell = collectionView.dequeueConfiguredReusableCell(using: topExpensesCellRegistration, for: indexPath, item: itemIdentifier)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllExpensesCollectionViewCell.id, for: indexPath) as! AllExpensesCollectionViewCell
             cell.selectedIndex = self.segmentView.segmentControl.selectedSegmentIndex
             return cell
             
