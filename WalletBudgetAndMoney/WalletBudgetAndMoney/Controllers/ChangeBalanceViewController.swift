@@ -359,6 +359,21 @@ extension ChangeBalanceViewController: UITableViewDelegate, UITableViewDataSourc
             navigationController?.setNavigationBarHidden(false, animated: false)
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if customKeyboard.isKeyboardVisible == true {
+            customKeyboard.view.removeFromSuperview()
+            NSLayoutConstraint.deactivate([
+                customKeyboard.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                customKeyboard.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                customKeyboard.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                customKeyboard.view.heightAnchor.constraint(equalToConstant: customKeyboard.buttonHeight * 4)
+            ])
+            
+            customKeyboard.isKeyboardVisible.toggle()
+        }
+    }
+    
 }
 
 extension ChangeBalanceViewController: CustomKeyboardViewControllerDelegate {
